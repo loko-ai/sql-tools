@@ -2,16 +2,7 @@
   "main": {
     "volumes": [
       "/var/opt/loko/sqlite:/plugin/resources/sqlite"
-    ],
-    "ports": {
-        "8080": "8000"
-      },
-    "environment": {
-      "SQL_HOST": "sql_ext_mysql",
-      "SQL_PORT": 3306,
-      "SQL_USER": "root",
-      "SQL_PASSWORD": "root_password"
-      }
+    ]
   },
   "side_containers": {
     "mysql": {
@@ -57,7 +48,7 @@
         "80": null
       },
       "environment": {
-        "PMA_HOST": "mysql:3306",
+        "PMA_HOST": "sql-tools_mysql:3306",
         "PMA_USER": "root",
         "PMA_PASSWORD": "root_password"
       },
