@@ -1,0 +1,74 @@
+{
+  "main": {
+    "volumes": [
+      "/var/opt/loko/sqlite:/plugin/resources/sqlite"
+    ],
+    "ports": {
+        "8080": "8000"
+      },
+    "environment": {
+      "SQL_HOST": "sql_ext_mysql",
+      "SQL_PORT": 3306,
+      "SQL_USER": "root",
+      "SQL_PASSWORD": "root_password"
+      }
+  },
+  "side_containers": {
+    "mysql": {
+      "image": "mysql:latest",
+      "ports": {
+        "3306": null
+      },
+      "environment": {
+        "MYSQL_ROOT_PASSWORD": "root_password"
+      },
+      "volumes": [
+        "/var/opt/loko/mysql/db:/var/lib/mysql"
+      ]
+    },
+    "mariadb": {
+      "image": "mariadb:latest",
+      "ports": {
+        "3306": null
+      },
+      "environment": {
+        "MARIADB_ROOT_PASSWORD": "root_password"
+      },
+      "volumes": [
+        "/var/opt/loko/mariadb/db:/var/lib/mysql"
+      ]
+    },
+    "postgres": {
+      "image": "postgres",
+      "ports": {
+        "5432": null
+      },
+      "environment": {
+        "POSTGRES_USER": "root",
+        "POSTGRES_PASSWORD": "root_password"
+      },
+      "volumes": [
+        "/var/opt/loko/postgres/db:/var/lib/postgresql/data"
+      ]
+    },
+    "mysql_gui": {
+      "image": "phpmyadmin",
+      "ports": {
+        "80": null
+      },
+      "environment": {
+        "PMA_HOST": "mysql:3306",
+        "PMA_USER": "root",
+        "PMA_PASSWORD": "root_password"
+      },
+      "expose": [
+        8080
+      ],
+      "gui": {
+        "name": "db manager",
+        "path": "/",
+        "gw": false
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+loko-extensions
+loko-client
+sanic
+sanic_openapi
+sqlalchemy
+sqlalchemy_utils
+PyMySQL
+cryptography
+psycopg2-binary
+loguru
+mariadb

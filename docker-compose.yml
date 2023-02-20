@@ -1,0 +1,39 @@
+version: '3.3'
+services:
+  mysql:
+    image: mysql:latest
+    volumes:
+      - /var/opt/loko/mysql/db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_password
+    ports:
+      - 3306:3306
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - 8081:80
+    environment:
+      - PMA_ARBITRARY=1
+  postgres:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root_password
+      - POSTGRES_DB=mydb
+    volumes:
+      - /var/opt/loko/postgres/db:/var/lib/postgresql/data
+
+  mariadb:
+    image: mariadb:latest
+    environment:
+      - MARIADB_DATABASE=mydb
+      - MARIADB_USER=user
+      - MARIADB_PASSWORD=password
+      - MARIADB_ROOT_PASSWORD=root_password
+    ports:
+      - 3307:3306
+    volumes:
+      - /var/opt/loko/mariadb/db:/var/lib/mysql

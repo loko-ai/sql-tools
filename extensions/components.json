@@ -1,0 +1,288 @@
+[
+ {
+  "name": "MySQL/MariaDB",
+  "description": "",
+  "group": "Custom",
+  "icon": "RiDatabase2Line",
+  "click": null,
+  "events": null,
+  "configured": true,
+  "inputs": [
+   {
+    "id": "insert",
+    "label": "insert",
+    "service": "save",
+    "to": "insert"
+   },
+   {
+    "id": "query",
+    "label": "query",
+    "service": "query",
+    "to": "query"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "insert",
+    "label": "insert"
+   },
+   {
+    "id": "query",
+    "label": "query"
+   }
+  ],
+  "options": {
+   "values": {
+    "db": "MySQL",
+    "host": "sql-tools_mysql",
+    "port": 3306,
+    "user": "root",
+    "password": "root_password",
+    "db_name": "mydb",
+    "table_name": "mytable"
+   },
+   "args": [
+    {
+     "name": "db",
+     "type": "select",
+     "label": "DB",
+     "helper": "Specify the DB type",
+     "group": "",
+     "value": "MySQL",
+     "description": "",
+     "validation": null,
+     "options": [
+      "MySQL",
+      "MariaDB"
+     ]
+    },
+    {
+     "name": "host",
+     "type": "text",
+     "label": "Host",
+     "helper": "",
+     "group": "",
+     "value": "sql-tools_mysql",
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "port",
+     "type": "number",
+     "label": "Port",
+     "helper": "",
+     "group": "",
+     "value": 3306,
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "user",
+     "type": "text",
+     "label": "user",
+     "helper": "",
+     "group": "",
+     "value": "root",
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "password",
+     "type": "password",
+     "label": "Password",
+     "helper": "",
+     "group": "",
+     "value": "root_password",
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "db_name",
+     "type": "text",
+     "label": "DB name",
+     "helper": "Specify the DB name",
+     "group": "",
+     "value": "mydb",
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "table_name",
+     "type": "text",
+     "label": "Table name",
+     "helper": "Specify the table name",
+     "group": "",
+     "value": "mytable",
+     "description": "",
+     "validation": null
+    }
+   ]
+  }
+ },
+ {
+  "name": "Postgres",
+  "description": "",
+  "group": "Custom",
+  "icon": "RiDatabase2Line",
+  "click": null,
+  "events": null,
+  "configured": true,
+  "inputs": [
+   {
+    "id": "insert",
+    "label": "insert",
+    "service": "save",
+    "to": "insert"
+   },
+   {
+    "id": "query",
+    "label": "query",
+    "service": "query",
+    "to": "query"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "insert",
+    "label": "insert"
+   },
+   {
+    "id": "query",
+    "label": "query"
+   }
+  ],
+  "options": {
+   "values": {
+    "host": "sql-tools_postgres",
+    "port": 5432,
+    "user": "root",
+    "password": "root_password",
+    "db_name": "mydb",
+    "table_name": "mytable"
+   },
+   "args": [
+    {
+     "name": "host",
+     "type": "text",
+     "label": "Host",
+     "helper": "",
+     "group": "",
+     "value": "sql-tools_postgres",
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "port",
+     "type": "number",
+     "label": "Port",
+     "helper": "",
+     "group": "",
+     "value": 5432,
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "user",
+     "type": "text",
+     "label": "user",
+     "helper": "",
+     "group": "",
+     "value": "root",
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "password",
+     "type": "password",
+     "label": "Password",
+     "helper": "",
+     "group": "",
+     "value": "root_password",
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "db_name",
+     "type": "text",
+     "label": "DB name",
+     "helper": "Specify the DB name",
+     "group": "",
+     "value": "mydb",
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "table_name",
+     "type": "text",
+     "label": "Table name",
+     "helper": "Specify the table name",
+     "group": "",
+     "value": "mytable",
+     "description": "",
+     "validation": null
+    }
+   ]
+  }
+ },
+ {
+  "name": "SQLite",
+  "description": "",
+  "group": "Custom",
+  "icon": "RiDatabase2Line",
+  "click": null,
+  "events": null,
+  "configured": true,
+  "inputs": [
+   {
+    "id": "insert",
+    "label": "insert",
+    "service": "save",
+    "to": "insert"
+   },
+   {
+    "id": "query",
+    "label": "query",
+    "service": "query",
+    "to": "query"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "insert",
+    "label": "insert"
+   },
+   {
+    "id": "query",
+    "label": "query"
+   }
+  ],
+  "options": {
+   "values": {
+    "db_name": "mydb",
+    "table_name": "mytable"
+   },
+   "args": [
+    {
+     "name": "db_name",
+     "type": "text",
+     "label": "DB name",
+     "helper": "Specify the DB name",
+     "group": "",
+     "value": "mydb",
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "table_name",
+     "type": "text",
+     "label": "Table name",
+     "helper": "Specify the table name",
+     "group": "",
+     "value": "mytable",
+     "description": "",
+     "validation": null
+    }
+   ]
+  }
+ }
+]

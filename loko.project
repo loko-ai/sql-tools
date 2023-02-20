@@ -1,0 +1,5295 @@
+{
+  "name": "sql-tools",
+  "id": "sql-tools",
+  "description": "",
+  "created_on": "15/02/2023, 08:36:18",
+  "last_modify": "20/02/2023, 10:17:57",
+  "graphs": {
+    "mysql": {
+      "nodes": [
+        {
+          "id": "f58ce1c6-7479-4064-8940-73e8c1ff4cdb",
+          "position": {
+            "x": 411,
+            "y": 169
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "insert",
+                "debug": false,
+                "type": "Object",
+                "value": "[dict(article=1, dealer='A', price=3.45), dict(article=1, dealer='B', price=3.99),\n dict(article=2, dealer='A', price=10.99), dict(article=3, dealer='B', price=1.45),\n dict(article=3, dealer='C', price=1.69), dict(article=3, dealer='D', price=1.25),\n dict(article=4, dealer='D', price=19.95), dict(article=1, dealer='A', price=None)]"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 411,
+            "y": 169
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "da8d63cc-4495-4f9f-83a2-300aa7e3d891",
+          "position": {
+            "x": 416.9531661401136,
+            "y": 410.9222946291583
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 104,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "delete",
+                "debug": false,
+                "type": "String",
+                "value": "DELETE FROM mytable"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 416.9531661401136,
+            "y": 410.9222946291583
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "ae4a2a05-5406-49f0-9824-0dc960512820",
+          "position": {
+            "x": 415.1039582234245,
+            "y": 287.0679414606436
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 104,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "query",
+                "debug": false,
+                "type": "String",
+                "value": "SELECT * FROM mytable LIMIT 10 OFFSET 5"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 415.1039582234245,
+            "y": 287.0679414606436
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "4b4bde6e-6ef9-4c75-ade4-d15cfa5e6a11",
+          "position": {
+            "x": 401.84353607140935,
+            "y": 46.187335439545905
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 104,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "create table",
+                "debug": false,
+                "type": "String",
+                "value": "CREATE TABLE mytable (article varchar(255), dealer varchar(255), price double);"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 401.84353607140935,
+            "y": 46.187335439545905
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "2a803702-17d8-4041-875a-8177a926b4db",
+          "position": {
+            "x": 415.9531661401136,
+            "y": 530.9222946291583
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 104,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "drop table",
+                "debug": false,
+                "type": "String",
+                "value": "DROP TABLE mytable;"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 415.9531661401136,
+            "y": 530.9222946291583
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "fa793226-798f-46da-b04a-a609705e8ed3",
+          "position": {
+            "x": 989.082569641819,
+            "y": 160.08938982113546
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "count",
+                "debug": false,
+                "type": "String",
+                "value": "SELECT COUNT(*) FROM mytable"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 989.082569641819,
+            "y": 160.08938982113546
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "034296a2-9cd1-4258-a78e-3720dd6bcaf3",
+          "position": {
+            "x": 1364.966303260626,
+            "y": 186.98970405459818
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Function",
+            "events": null,
+            "description": "### Description\nThe FUNCTION component is used to apply Python code to the input component's. The input can be retrieved using the variable *data*.\n\nTo be able to use data from components of type FUNCTION that are not linked together, the object is set repository.\n\n```python\nrepository.set('value', 5) - this sets the variable value to 5.\nrepository.get('value') - in this way the variable is called value and the value 5 is returned.\n```\n\n### Input\nThe input is used by the component using the variable **data**.\n\n### Output\nThe output coincides with the return of the code defined when the component was created.",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "propagate",
+                  "type": "boolean",
+                  "label": "Flush at the end"
+                },
+                {
+                  "name": "notify_warnings",
+                  "type": "boolean",
+                  "label": "Notify warnings"
+                },
+                {
+                  "name": "code",
+                  "type": "code",
+                  "description": "A python function that processes the incoming message. \nVariables available are:\n- **data**: the incoming message\n",
+                  "label": "Code",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": null,
+                  "value": null
+                }
+              ],
+              "click": null,
+              "icon": "RiCodeSSlashFill",
+              "values": {
+                "comment": "",
+                "alias": "read batches",
+                "debug": true,
+                "propagate": true,
+                "notify_warnings": true,
+                "code": "tot = data['COUNT(*)']\nbatch_size = 3\nn_batches = tot/batch_size\nn_batches = n_batches if tot%batch_size==0 else int(n_batches+1)\nfor i in range(n_batches):\n  offset = i*batch_size\n  yield f'SELECT * FROM mytable LIMIT {batch_size} OFFSET {offset}'\n\n"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1364.966303260626,
+            "y": 186.98970405459818
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "7431a3ec-c5df-47bc-bcf5-99df5385b445",
+          "position": {
+            "x": 1788.6380960078516,
+            "y": 171.3915894553743
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Grouper",
+            "events": null,
+            "description": "### Description\nThe GROUPER component is used to group the elements received in input. The items will be returned in batches with a maximum size equal to **Group size**.\n\n### Input\nIn this case there is no fixed input format.\n\n### Output\nIn output lists of elements received in input with a maximum length equal to **Group size**.",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "n",
+                  "label": "Group size",
+                  "type": "number"
+                }
+              ],
+              "click": null,
+              "icon": "RiGroupFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "n": "100"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1788.6380960078516,
+            "y": 171.3915894553743
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "0be89958-4d4c-47f7-b85d-b3f2926a63fc",
+          "position": {
+            "x": 719,
+            "y": 282
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "MySQL/MariaDB",
+            "events": null,
+            "description": "",
+            "inputs": [
+              {
+                "id": "insert",
+                "label": "insert",
+                "service": "save",
+                "to": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query",
+                "service": "query",
+                "to": "query"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "insert",
+                "label": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "db",
+                  "type": "select",
+                  "label": "DB",
+                  "helper": "Specify the DB type",
+                  "group": "",
+                  "value": "MySQL",
+                  "description": "",
+                  "validation": null,
+                  "options": [
+                    "MySQL",
+                    "MariaDB"
+                  ]
+                },
+                {
+                  "name": "host",
+                  "type": "text",
+                  "label": "Host",
+                  "helper": "",
+                  "group": "",
+                  "value": "sql-tools_mysql",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "port",
+                  "type": "number",
+                  "label": "Port",
+                  "helper": "",
+                  "group": "",
+                  "value": 3306,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "user",
+                  "type": "text",
+                  "label": "user",
+                  "helper": "",
+                  "group": "",
+                  "value": "root",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "password",
+                  "type": "password",
+                  "label": "Password",
+                  "helper": "",
+                  "group": "",
+                  "value": "root_password",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "db_name",
+                  "type": "text",
+                  "label": "DB name",
+                  "helper": "Specify the DB name",
+                  "group": "",
+                  "value": "mydb",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "table_name",
+                  "type": "text",
+                  "label": "Table name",
+                  "helper": "Specify the table name",
+                  "group": "",
+                  "value": "mytable",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiDatabase2Line",
+              "values": {
+                "db": "MySQL",
+                "host": "sql-tools_mysql",
+                "port": 3306,
+                "user": "root",
+                "password": "root_password",
+                "db_name": "mydb",
+                "table_name": "mytable",
+                "debug": true
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 719,
+            "y": 282
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "6a2a83e4-e9de-4c3c-9a40-647844450475",
+          "position": {
+            "x": 1163,
+            "y": 159
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 172,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "MySQL/MariaDB",
+            "events": null,
+            "description": "",
+            "inputs": [
+              {
+                "id": "insert",
+                "label": "insert",
+                "service": "save",
+                "to": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query",
+                "service": "query",
+                "to": "query"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "insert",
+                "label": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "db",
+                  "type": "select",
+                  "label": "DB",
+                  "helper": "Specify the DB type",
+                  "group": "",
+                  "value": "MySQL",
+                  "description": "",
+                  "validation": null,
+                  "options": [
+                    "MySQL",
+                    "MariaDB"
+                  ]
+                },
+                {
+                  "name": "host",
+                  "type": "text",
+                  "label": "Host",
+                  "helper": "",
+                  "group": "",
+                  "value": "sql-tools_mysql",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "port",
+                  "type": "number",
+                  "label": "Port",
+                  "helper": "",
+                  "group": "",
+                  "value": 3306,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "user",
+                  "type": "text",
+                  "label": "user",
+                  "helper": "",
+                  "group": "",
+                  "value": "root",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "password",
+                  "type": "password",
+                  "label": "Password",
+                  "helper": "",
+                  "group": "",
+                  "value": "root_password",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "db_name",
+                  "type": "text",
+                  "label": "DB name",
+                  "helper": "Specify the DB name",
+                  "group": "",
+                  "value": "mydb",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "table_name",
+                  "type": "text",
+                  "label": "Table name",
+                  "helper": "Specify the table name",
+                  "group": "",
+                  "value": "mytable",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiDatabase2Line",
+              "values": {
+                "db": "MySQL",
+                "host": "sql-tools_mysql",
+                "port": 3306,
+                "user": "root",
+                "password": "root_password",
+                "db_name": "mydb",
+                "table_name": "mytable"
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1163,
+            "y": 159
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "65251cb0-2081-48d8-b584-dcb8c96f614d",
+          "position": {
+            "x": 1575,
+            "y": 208
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 172,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "MySQL/MariaDB",
+            "events": null,
+            "description": "",
+            "inputs": [
+              {
+                "id": "insert",
+                "label": "insert",
+                "service": "save",
+                "to": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query",
+                "service": "query",
+                "to": "query"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "insert",
+                "label": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "db",
+                  "type": "select",
+                  "label": "DB",
+                  "helper": "Specify the DB type",
+                  "group": "",
+                  "value": "MySQL",
+                  "description": "",
+                  "validation": null,
+                  "options": [
+                    "MySQL",
+                    "MariaDB"
+                  ]
+                },
+                {
+                  "name": "host",
+                  "type": "text",
+                  "label": "Host",
+                  "helper": "",
+                  "group": "",
+                  "value": "sql-tools_mysql",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "port",
+                  "type": "number",
+                  "label": "Port",
+                  "helper": "",
+                  "group": "",
+                  "value": 3306,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "user",
+                  "type": "text",
+                  "label": "user",
+                  "helper": "",
+                  "group": "",
+                  "value": "root",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "password",
+                  "type": "password",
+                  "label": "Password",
+                  "helper": "",
+                  "group": "",
+                  "value": "root_password",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "db_name",
+                  "type": "text",
+                  "label": "DB name",
+                  "helper": "Specify the DB name",
+                  "group": "",
+                  "value": "mydb",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "table_name",
+                  "type": "text",
+                  "label": "Table name",
+                  "helper": "Specify the table name",
+                  "group": "",
+                  "value": "mytable",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiDatabase2Line",
+              "values": {
+                "db": "MySQL",
+                "host": "sql-tools_mysql",
+                "port": 3306,
+                "user": "root",
+                "password": "root_password",
+                "db_name": "mydb",
+                "table_name": "mytable"
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1575,
+            "y": 208
+          },
+          "__class__": "Node"
+        }
+      ],
+      "edges": [
+        {
+          "id": "reactflow__edge-4b4bde6e-6ef9-4c75-ade4-d15cfa5e6a11output-0be89958-4d4c-47f7-b85d-b3f2926a63fcquery",
+          "source": "4b4bde6e-6ef9-4c75-ade4-d15cfa5e6a11",
+          "sourceHandle": "output",
+          "target": "0be89958-4d4c-47f7-b85d-b3f2926a63fc",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-f58ce1c6-7479-4064-8940-73e8c1ff4cdboutput-0be89958-4d4c-47f7-b85d-b3f2926a63fcinsert",
+          "source": "f58ce1c6-7479-4064-8940-73e8c1ff4cdb",
+          "sourceHandle": "output",
+          "target": "0be89958-4d4c-47f7-b85d-b3f2926a63fc",
+          "targetHandle": "insert",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-ae4a2a05-5406-49f0-9824-0dc960512820output-0be89958-4d4c-47f7-b85d-b3f2926a63fcquery",
+          "source": "ae4a2a05-5406-49f0-9824-0dc960512820",
+          "sourceHandle": "output",
+          "target": "0be89958-4d4c-47f7-b85d-b3f2926a63fc",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-da8d63cc-4495-4f9f-83a2-300aa7e3d891output-0be89958-4d4c-47f7-b85d-b3f2926a63fcquery",
+          "source": "da8d63cc-4495-4f9f-83a2-300aa7e3d891",
+          "sourceHandle": "output",
+          "target": "0be89958-4d4c-47f7-b85d-b3f2926a63fc",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-2a803702-17d8-4041-875a-8177a926b4dboutput-0be89958-4d4c-47f7-b85d-b3f2926a63fcquery",
+          "source": "2a803702-17d8-4041-875a-8177a926b4db",
+          "sourceHandle": "output",
+          "target": "0be89958-4d4c-47f7-b85d-b3f2926a63fc",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-fa793226-798f-46da-b04a-a609705e8ed3output-6a2a83e4-e9de-4c3c-9a40-647844450475query",
+          "source": "fa793226-798f-46da-b04a-a609705e8ed3",
+          "sourceHandle": "output",
+          "target": "6a2a83e4-e9de-4c3c-9a40-647844450475",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-6a2a83e4-e9de-4c3c-9a40-647844450475query-034296a2-9cd1-4258-a78e-3720dd6bcaf3input",
+          "source": "6a2a83e4-e9de-4c3c-9a40-647844450475",
+          "sourceHandle": "query",
+          "target": "034296a2-9cd1-4258-a78e-3720dd6bcaf3",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#888",
+            "stopColor": "#D770AD"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-034296a2-9cd1-4258-a78e-3720dd6bcaf3output-65251cb0-2081-48d8-b584-dcb8c96f614dquery",
+          "source": "034296a2-9cd1-4258-a78e-3720dd6bcaf3",
+          "sourceHandle": "output",
+          "target": "65251cb0-2081-48d8-b584-dcb8c96f614d",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-65251cb0-2081-48d8-b584-dcb8c96f614dquery-7431a3ec-c5df-47bc-bcf5-99df5385b445input",
+          "source": "65251cb0-2081-48d8-b584-dcb8c96f614d",
+          "sourceHandle": "query",
+          "target": "7431a3ec-c5df-47bc-bcf5-99df5385b445",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#888",
+            "stopColor": "#D770AD"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        }
+      ],
+      "__class__": "Graph"
+    },
+    "postgres": {
+      "nodes": [
+        {
+          "id": "02b4f758-3a12-4b5f-a427-e0df77b67f5e",
+          "position": {
+            "x": 441.476432490299,
+            "y": 192.9106101788646
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 104,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "insert",
+                "debug": false,
+                "type": "Object",
+                "value": "[dict(article=1, dealer='A', price=3.45), dict(article=1, dealer='B', price=3.99),\n dict(article=2, dealer='A', price=10.99), dict(article=3, dealer='B', price=1.45),\n dict(article=3, dealer='C', price=1.69), dict(article=3, dealer='D', price=1.25),\n dict(article=4, dealer='D', price=19.95), dict(article=1, dealer='A', price=None)]"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 441.476432490299,
+            "y": 192.9106101788646
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "206b54e9-2f49-401d-bd9d-2cbe64199d77",
+          "position": {
+            "x": 447.42959863041233,
+            "y": 425.7332190414855
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 104,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "delete",
+                "debug": false,
+                "type": "String",
+                "value": "DELETE FROM mytable"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 447.42959863041233,
+            "y": 425.7332190414855
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "5b6903ca-9d06-4d2c-a6af-808c7057d632",
+          "position": {
+            "x": 439.5803907137233,
+            "y": 309.4769804721948
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 104,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "query",
+                "debug": false,
+                "type": "String",
+                "value": "SELECT * FROM mytable LIMIT 10 OFFSET 5"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 439.5803907137233,
+            "y": 309.4769804721948
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "242cfb08-bdc2-4b6a-bb84-fb983b213f63",
+          "position": {
+            "x": 434.91808316093193,
+            "y": 69.89543175070901
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 164,
+          "height": 104,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "create table",
+                "debug": false,
+                "type": "String",
+                "value": "CREATE TABLE mytable (article varchar(255), dealer varchar(255), price decimal);"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 434.91808316093193,
+            "y": 69.89543175070901
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "9c15519d-cce2-4dff-a616-ab2e76b875e5",
+          "position": {
+            "x": 443.0277132296362,
+            "y": 542.4341617418736
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 104,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "drop table",
+                "debug": false,
+                "type": "String",
+                "value": "DROP TABLE mytable;"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 443.0277132296362,
+            "y": 542.4341617418736
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "b95835c4-e196-413c-b4e2-e4aca88529df",
+          "position": {
+            "x": 1057.082569641819,
+            "y": 125.08938982113546
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "count",
+                "debug": false,
+                "type": "String",
+                "value": "SELECT COUNT(*) FROM mytable"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1057.082569641819,
+            "y": 125.08938982113546
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "61fae21e-5646-44f3-8699-516a28b8a16c",
+          "position": {
+            "x": 1421.966303260626,
+            "y": 140.98970405459818
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Function",
+            "events": null,
+            "description": "### Description\nThe FUNCTION component is used to apply Python code to the input component's. The input can be retrieved using the variable *data*.\n\nTo be able to use data from components of type FUNCTION that are not linked together, the object is set repository.\n\n```python\nrepository.set('value', 5) - this sets the variable value to 5.\nrepository.get('value') - in this way the variable is called value and the value 5 is returned.\n```\n\n### Input\nThe input is used by the component using the variable **data**.\n\n### Output\nThe output coincides with the return of the code defined when the component was created.",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "propagate",
+                  "type": "boolean",
+                  "label": "Flush at the end"
+                },
+                {
+                  "name": "notify_warnings",
+                  "type": "boolean",
+                  "label": "Notify warnings"
+                },
+                {
+                  "name": "code",
+                  "type": "code",
+                  "description": "A python function that processes the incoming message. \nVariables available are:\n- **data**: the incoming message\n",
+                  "label": "Code",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": null,
+                  "value": null
+                }
+              ],
+              "click": null,
+              "icon": "RiCodeSSlashFill",
+              "values": {
+                "comment": "",
+                "alias": "read batches",
+                "debug": true,
+                "propagate": true,
+                "notify_warnings": true,
+                "code": "tot = data['count']\nbatch_size = 3\nn_batches = tot/batch_size\nn_batches = n_batches if tot%batch_size==0 else int(n_batches+1)\nfor i in range(n_batches):\n  offset = i*batch_size\n  yield f'SELECT * FROM mytable LIMIT {batch_size} OFFSET {offset}'\n\n"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1421.966303260626,
+            "y": 140.98970405459818
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "2d11b198-51e1-4041-8847-9052abd83322",
+          "position": {
+            "x": 1822.6380960078516,
+            "y": 147.3915894553743
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Grouper",
+            "events": null,
+            "description": "### Description\nThe GROUPER component is used to group the elements received in input. The items will be returned in batches with a maximum size equal to **Group size**.\n\n### Input\nIn this case there is no fixed input format.\n\n### Output\nIn output lists of elements received in input with a maximum length equal to **Group size**.",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "n",
+                  "label": "Group size",
+                  "type": "number"
+                }
+              ],
+              "click": null,
+              "icon": "RiGroupFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "n": "100"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1822.6380960078516,
+            "y": 147.3915894553743
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "ae66b926-b4c5-406a-a20d-145f25a6618f",
+          "position": {
+            "x": 1242,
+            "y": 191
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Postgres",
+            "events": null,
+            "description": "",
+            "inputs": [
+              {
+                "id": "insert",
+                "label": "insert",
+                "service": "save",
+                "to": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query",
+                "service": "query",
+                "to": "query"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "insert",
+                "label": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "host",
+                  "type": "text",
+                  "label": "Host",
+                  "helper": "",
+                  "group": "",
+                  "value": "sql_ext_postgres",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "port",
+                  "type": "number",
+                  "label": "Port",
+                  "helper": "",
+                  "group": "",
+                  "value": 5432,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "user",
+                  "type": "text",
+                  "label": "user",
+                  "helper": "",
+                  "group": "",
+                  "value": "root",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "password",
+                  "type": "password",
+                  "label": "Password",
+                  "helper": "",
+                  "group": "",
+                  "value": "root_password",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "db_name",
+                  "type": "text",
+                  "label": "DB name",
+                  "helper": "Specify the DB name",
+                  "group": "",
+                  "value": "mydb",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "table_name",
+                  "type": "text",
+                  "label": "Table name",
+                  "helper": "Specify the table name",
+                  "group": "",
+                  "value": "mytable",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiDatabase2Line",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "host": "sql-tools_postgres",
+                "port": "5432",
+                "user": "root",
+                "password": "root_password",
+                "db_name": "mydb",
+                "table_name": "mytable"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1242,
+            "y": 191
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "b042dd7e-cf21-4bb1-888c-56511c1165fc",
+          "position": {
+            "x": 1633,
+            "y": 186
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Postgres",
+            "events": null,
+            "description": "",
+            "inputs": [
+              {
+                "id": "insert",
+                "label": "insert",
+                "service": "save",
+                "to": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query",
+                "service": "query",
+                "to": "query"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "insert",
+                "label": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "host",
+                  "type": "text",
+                  "label": "Host",
+                  "helper": "",
+                  "group": "",
+                  "value": "sql_ext_postgres",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "port",
+                  "type": "number",
+                  "label": "Port",
+                  "helper": "",
+                  "group": "",
+                  "value": 5432,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "user",
+                  "type": "text",
+                  "label": "user",
+                  "helper": "",
+                  "group": "",
+                  "value": "root",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "password",
+                  "type": "password",
+                  "label": "Password",
+                  "helper": "",
+                  "group": "",
+                  "value": "root_password",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "db_name",
+                  "type": "text",
+                  "label": "DB name",
+                  "helper": "Specify the DB name",
+                  "group": "",
+                  "value": "mydb",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "table_name",
+                  "type": "text",
+                  "label": "Table name",
+                  "helper": "Specify the table name",
+                  "group": "",
+                  "value": "mytable",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiDatabase2Line",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": false,
+                "host": "sql-tools_postgres",
+                "port": "5432",
+                "user": "root",
+                "password": "root_password",
+                "db_name": "mydb",
+                "table_name": "mytable"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1633,
+            "y": 186
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41",
+          "position": {
+            "x": 737,
+            "y": 323
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Postgres",
+            "events": null,
+            "description": "",
+            "inputs": [
+              {
+                "id": "insert",
+                "label": "insert",
+                "service": "save",
+                "to": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query",
+                "service": "query",
+                "to": "query"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "insert",
+                "label": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "host",
+                  "type": "text",
+                  "label": "Host",
+                  "helper": "",
+                  "group": "",
+                  "value": "sql-tools_postgres",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "port",
+                  "type": "number",
+                  "label": "Port",
+                  "helper": "",
+                  "group": "",
+                  "value": 5432,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "user",
+                  "type": "text",
+                  "label": "user",
+                  "helper": "",
+                  "group": "",
+                  "value": "root",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "password",
+                  "type": "password",
+                  "label": "Password",
+                  "helper": "",
+                  "group": "",
+                  "value": "root_password",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "db_name",
+                  "type": "text",
+                  "label": "DB name",
+                  "helper": "Specify the DB name",
+                  "group": "",
+                  "value": "mydb",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "table_name",
+                  "type": "text",
+                  "label": "Table name",
+                  "helper": "Specify the table name",
+                  "group": "",
+                  "value": "mytable",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiDatabase2Line",
+              "values": {
+                "host": "sql-tools_postgres",
+                "port": 5432,
+                "user": "root",
+                "password": "root_password",
+                "db_name": "mydb",
+                "table_name": "mytable",
+                "debug": true
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 737,
+            "y": 323
+          },
+          "__class__": "Node"
+        }
+      ],
+      "edges": [
+        {
+          "id": "reactflow__edge-b95835c4-e196-413c-b4e2-e4aca88529dfoutput-ae66b926-b4c5-406a-a20d-145f25a6618fquery",
+          "source": "b95835c4-e196-413c-b4e2-e4aca88529df",
+          "sourceHandle": "output",
+          "target": "ae66b926-b4c5-406a-a20d-145f25a6618f",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-ae66b926-b4c5-406a-a20d-145f25a6618fquery-61fae21e-5646-44f3-8699-516a28b8a16cinput",
+          "source": "ae66b926-b4c5-406a-a20d-145f25a6618f",
+          "sourceHandle": "query",
+          "target": "61fae21e-5646-44f3-8699-516a28b8a16c",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#888",
+            "stopColor": "#D770AD"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-61fae21e-5646-44f3-8699-516a28b8a16coutput-b042dd7e-cf21-4bb1-888c-56511c1165fcquery",
+          "source": "61fae21e-5646-44f3-8699-516a28b8a16c",
+          "sourceHandle": "output",
+          "target": "b042dd7e-cf21-4bb1-888c-56511c1165fc",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-b042dd7e-cf21-4bb1-888c-56511c1165fcquery-2d11b198-51e1-4041-8847-9052abd83322input",
+          "source": "b042dd7e-cf21-4bb1-888c-56511c1165fc",
+          "sourceHandle": "query",
+          "target": "2d11b198-51e1-4041-8847-9052abd83322",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#888",
+            "stopColor": "#D770AD"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-242cfb08-bdc2-4b6a-bb84-fb983b213f63output-b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41query",
+          "source": "242cfb08-bdc2-4b6a-bb84-fb983b213f63",
+          "sourceHandle": "output",
+          "target": "b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-02b4f758-3a12-4b5f-a427-e0df77b67f5eoutput-b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41insert",
+          "source": "02b4f758-3a12-4b5f-a427-e0df77b67f5e",
+          "sourceHandle": "output",
+          "target": "b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41",
+          "targetHandle": "insert",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-5b6903ca-9d06-4d2c-a6af-808c7057d632output-b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41query",
+          "source": "5b6903ca-9d06-4d2c-a6af-808c7057d632",
+          "sourceHandle": "output",
+          "target": "b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-206b54e9-2f49-401d-bd9d-2cbe64199d77output-b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41query",
+          "source": "206b54e9-2f49-401d-bd9d-2cbe64199d77",
+          "sourceHandle": "output",
+          "target": "b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-9c15519d-cce2-4dff-a616-ab2e76b875e5output-b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41query",
+          "source": "9c15519d-cce2-4dff-a616-ab2e76b875e5",
+          "sourceHandle": "output",
+          "target": "b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        }
+      ],
+      "__class__": "Graph"
+    },
+    "sqlite": {
+      "nodes": [
+        {
+          "id": "b6293a66-49f2-4403-9f40-de1090b3abce",
+          "position": {
+            "x": 451,
+            "y": 209
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 104,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "insert",
+                "debug": false,
+                "type": "Object",
+                "value": "[dict(article=1, dealer='A', price=3.45), dict(article=1, dealer='B', price=3.99),\n dict(article=2, dealer='A', price=10.99), dict(article=3, dealer='B', price=1.45),\n dict(article=3, dealer='C', price=1.69), dict(article=3, dealer='D', price=1.25),\n dict(article=4, dealer='D', price=19.95), dict(article=1, dealer='A', price=None)]"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 411,
+            "y": 169
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "6657fc83-14e3-4fa7-9b18-d30786ea2a4b",
+          "position": {
+            "x": 456.9531661401136,
+            "y": 450.9222946291583
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 104,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "delete",
+                "debug": false,
+                "type": "String",
+                "value": "DELETE FROM mytable"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 416.9531661401136,
+            "y": 410.9222946291583
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "102774c4-8cb7-4b03-922b-1ef0ab43b8c3",
+          "position": {
+            "x": 455.1039582234245,
+            "y": 327.0679414606436
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 104,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "query",
+                "debug": false,
+                "type": "String",
+                "value": "SELECT * FROM mytable LIMIT 10 OFFSET 5"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 415.1039582234245,
+            "y": 287.0679414606436
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "f19b7cce-9ace-41d1-84eb-673ff5653117",
+          "position": {
+            "x": 441.84353607140935,
+            "y": 86.1873354395459
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 164,
+          "height": 104,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "create table",
+                "debug": false,
+                "type": "String",
+                "value": "CREATE TABLE mytable (article varchar(255), dealer varchar(255), price double);"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 401.84353607140935,
+            "y": 46.187335439545905
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "4aa64734-9867-49e2-872f-6214dd2479c6",
+          "position": {
+            "x": 455.9531661401136,
+            "y": 570.9222946291583
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 104,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "drop table",
+                "debug": false,
+                "type": "String",
+                "value": "DROP TABLE mytable;"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 415.9531661401136,
+            "y": 530.9222946291583
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "36d7a8e4-5b47-472f-be38-fd8682aa9740",
+          "position": {
+            "x": 1029.082569641819,
+            "y": 200.08938982113546
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 104,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "count",
+                "debug": false,
+                "type": "String",
+                "value": "SELECT COUNT(*) FROM mytable"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 989.082569641819,
+            "y": 160.08938982113546
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "402d2e64-856d-433f-bc51-432312689554",
+          "position": {
+            "x": 1404.966303260626,
+            "y": 226.98970405459818
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 164,
+          "height": 72,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Function",
+            "events": null,
+            "description": "### Description\nThe FUNCTION component is used to apply Python code to the input component's. The input can be retrieved using the variable *data*.\n\nTo be able to use data from components of type FUNCTION that are not linked together, the object is set repository.\n\n```python\nrepository.set('value', 5) - this sets the variable value to 5.\nrepository.get('value') - in this way the variable is called value and the value 5 is returned.\n```\n\n### Input\nThe input is used by the component using the variable **data**.\n\n### Output\nThe output coincides with the return of the code defined when the component was created.",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "propagate",
+                  "type": "boolean",
+                  "label": "Flush at the end"
+                },
+                {
+                  "name": "notify_warnings",
+                  "type": "boolean",
+                  "label": "Notify warnings"
+                },
+                {
+                  "name": "code",
+                  "type": "code",
+                  "description": "A python function that processes the incoming message. \nVariables available are:\n- **data**: the incoming message\n",
+                  "label": "Code",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": null,
+                  "value": null
+                }
+              ],
+              "click": null,
+              "icon": "RiCodeSSlashFill",
+              "values": {
+                "comment": "",
+                "alias": "read batches",
+                "debug": true,
+                "propagate": true,
+                "notify_warnings": true,
+                "code": "tot = data['COUNT(*)']\nbatch_size = 3\nn_batches = tot/batch_size\nn_batches = int(n_batches) if tot%batch_size==0 else int(n_batches+1)\nfor i in range(n_batches):\n  offset = i*batch_size\n  yield f'SELECT * FROM mytable LIMIT {batch_size} OFFSET {offset}'\n"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1364.966303260626,
+            "y": 186.98970405459818
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "daeaae1b-acc2-4ee8-b1e8-c1fe99226e81",
+          "position": {
+            "x": 1828.6380960078516,
+            "y": 211.3915894553743
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Grouper",
+            "events": null,
+            "description": "### Description\nThe GROUPER component is used to group the elements received in input. The items will be returned in batches with a maximum size equal to **Group size**.\n\n### Input\nIn this case there is no fixed input format.\n\n### Output\nIn output lists of elements received in input with a maximum length equal to **Group size**.",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "n",
+                  "label": "Group size",
+                  "type": "number"
+                }
+              ],
+              "click": null,
+              "icon": "RiGroupFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "n": "100"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1788.6380960078516,
+            "y": 171.3915894553743
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "357b64f5-0fb8-4b36-a15c-a01af55d156f",
+          "position": {
+            "x": 745,
+            "y": 285
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "SQLite",
+            "events": null,
+            "description": "",
+            "inputs": [
+              {
+                "id": "insert",
+                "label": "insert",
+                "service": "save",
+                "to": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query",
+                "service": "query",
+                "to": "query"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "insert",
+                "label": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "db_name",
+                  "type": "text",
+                  "label": "DB name",
+                  "helper": "Specify the DB name",
+                  "group": "",
+                  "value": "mydb",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "table_name",
+                  "type": "text",
+                  "label": "Table name",
+                  "helper": "Specify the table name",
+                  "group": "",
+                  "value": "mytable",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiDatabase2Line",
+              "values": {
+                "db_name": "mydb",
+                "table_name": "mytable",
+                "debug": true
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 745,
+            "y": 285
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "5f887c05-ad31-47d4-a671-29ff6a9f5259",
+          "position": {
+            "x": 1216,
+            "y": 190
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "SQLite",
+            "events": null,
+            "description": "",
+            "inputs": [
+              {
+                "id": "insert",
+                "label": "insert",
+                "service": "save",
+                "to": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query",
+                "service": "query",
+                "to": "query"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "insert",
+                "label": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "db_name",
+                  "type": "text",
+                  "label": "DB name",
+                  "helper": "Specify the DB name",
+                  "group": "",
+                  "value": "mydb",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "table_name",
+                  "type": "text",
+                  "label": "Table name",
+                  "helper": "Specify the table name",
+                  "group": "",
+                  "value": "mytable",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiDatabase2Line",
+              "values": {
+                "db_name": "mydb",
+                "table_name": "mytable",
+                "debug": true
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1216,
+            "y": 190
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "61b6484d-dd5f-412e-b4a3-537739e5194c",
+          "position": {
+            "x": 1624,
+            "y": 252
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "SQLite",
+            "events": null,
+            "description": "",
+            "inputs": [
+              {
+                "id": "insert",
+                "label": "insert",
+                "service": "save",
+                "to": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query",
+                "service": "query",
+                "to": "query",
+                "closed": false
+              }
+            ],
+            "outputs": [
+              {
+                "id": "insert",
+                "label": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "db_name",
+                  "type": "text",
+                  "label": "DB name",
+                  "helper": "Specify the DB name",
+                  "group": "",
+                  "value": "mydb",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "table_name",
+                  "type": "text",
+                  "label": "Table name",
+                  "helper": "Specify the table name",
+                  "group": "",
+                  "value": "mytable",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiDatabase2Line",
+              "values": {
+                "db_name": "mydb",
+                "table_name": "mytable"
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1624,
+            "y": 252
+          },
+          "__class__": "Node"
+        }
+      ],
+      "edges": [
+        {
+          "id": "reactflow__edge-f19b7cce-9ace-41d1-84eb-673ff5653117output-357b64f5-0fb8-4b36-a15c-a01af55d156fquery",
+          "source": "f19b7cce-9ace-41d1-84eb-673ff5653117",
+          "sourceHandle": "output",
+          "target": "357b64f5-0fb8-4b36-a15c-a01af55d156f",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-b6293a66-49f2-4403-9f40-de1090b3abceoutput-357b64f5-0fb8-4b36-a15c-a01af55d156finsert",
+          "source": "b6293a66-49f2-4403-9f40-de1090b3abce",
+          "sourceHandle": "output",
+          "target": "357b64f5-0fb8-4b36-a15c-a01af55d156f",
+          "targetHandle": "insert",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-102774c4-8cb7-4b03-922b-1ef0ab43b8c3output-357b64f5-0fb8-4b36-a15c-a01af55d156fquery",
+          "source": "102774c4-8cb7-4b03-922b-1ef0ab43b8c3",
+          "sourceHandle": "output",
+          "target": "357b64f5-0fb8-4b36-a15c-a01af55d156f",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-6657fc83-14e3-4fa7-9b18-d30786ea2a4boutput-357b64f5-0fb8-4b36-a15c-a01af55d156fquery",
+          "source": "6657fc83-14e3-4fa7-9b18-d30786ea2a4b",
+          "sourceHandle": "output",
+          "target": "357b64f5-0fb8-4b36-a15c-a01af55d156f",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-4aa64734-9867-49e2-872f-6214dd2479c6output-357b64f5-0fb8-4b36-a15c-a01af55d156fquery",
+          "source": "4aa64734-9867-49e2-872f-6214dd2479c6",
+          "sourceHandle": "output",
+          "target": "357b64f5-0fb8-4b36-a15c-a01af55d156f",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-36d7a8e4-5b47-472f-be38-fd8682aa9740output-5f887c05-ad31-47d4-a671-29ff6a9f5259query",
+          "source": "36d7a8e4-5b47-472f-be38-fd8682aa9740",
+          "sourceHandle": "output",
+          "target": "5f887c05-ad31-47d4-a671-29ff6a9f5259",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-5f887c05-ad31-47d4-a671-29ff6a9f5259query-402d2e64-856d-433f-bc51-432312689554input",
+          "source": "5f887c05-ad31-47d4-a671-29ff6a9f5259",
+          "sourceHandle": "query",
+          "target": "402d2e64-856d-433f-bc51-432312689554",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#888",
+            "stopColor": "#D770AD"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-402d2e64-856d-433f-bc51-432312689554output-61b6484d-dd5f-412e-b4a3-537739e5194cquery",
+          "source": "402d2e64-856d-433f-bc51-432312689554",
+          "sourceHandle": "output",
+          "target": "61b6484d-dd5f-412e-b4a3-537739e5194c",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-61b6484d-dd5f-412e-b4a3-537739e5194cquery-daeaae1b-acc2-4ee8-b1e8-c1fe99226e81input",
+          "source": "61b6484d-dd5f-412e-b4a3-537739e5194c",
+          "sourceHandle": "query",
+          "target": "daeaae1b-acc2-4ee8-b1e8-c1fe99226e81",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#888",
+            "stopColor": "#D770AD"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        }
+      ],
+      "__class__": "Graph"
+    },
+    "mariadb": {
+      "nodes": [
+        {
+          "id": "7886246e-f8fa-42c1-a6a6-90bf3539f3eb",
+          "position": {
+            "x": 491,
+            "y": 249
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 104,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "insert",
+                "debug": false,
+                "type": "Object",
+                "value": "[dict(article=1, dealer='A', price=3.45), dict(article=1, dealer='B', price=3.99),\n dict(article=2, dealer='A', price=10.99), dict(article=3, dealer='B', price=1.45),\n dict(article=3, dealer='C', price=1.69), dict(article=3, dealer='D', price=1.25),\n dict(article=4, dealer='D', price=19.95), dict(article=1, dealer='A', price=None)]"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 451,
+            "y": 209
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "3d819693-3fc9-4918-a1cc-b1fa81000de5",
+          "position": {
+            "x": 496.9531661401136,
+            "y": 490.9222946291583
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 104,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "delete",
+                "debug": false,
+                "type": "String",
+                "value": "DELETE FROM mytable"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 456.9531661401136,
+            "y": 450.9222946291583
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "33011bf9-099c-4f42-8fc4-560b8781b641",
+          "position": {
+            "x": 495.1039582234245,
+            "y": 367.0679414606436
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 104,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "query",
+                "debug": false,
+                "type": "String",
+                "value": "SELECT * FROM mytable LIMIT 10 OFFSET 5"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 455.1039582234245,
+            "y": 327.0679414606436
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "e66b1f39-dd7c-4d3a-b3bf-19b1195610c6",
+          "position": {
+            "x": 481.84353607140935,
+            "y": 126.1873354395459
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 164,
+          "height": 104,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "create table",
+                "debug": false,
+                "type": "String",
+                "value": "CREATE TABLE mytable (article varchar(255), dealer varchar(255), price double);"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 441.84353607140935,
+            "y": 86.1873354395459
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "ee0d5d75-3e3a-4f0b-b263-b6a05d3340e6",
+          "position": {
+            "x": 495.9531661401136,
+            "y": 610.9222946291583
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 104,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "drop table",
+                "debug": false,
+                "type": "String",
+                "value": "DROP TABLE mytable;"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 455.9531661401136,
+            "y": 570.9222946291583
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "a466f060-0b97-4fea-82fc-645e1025b1b4",
+          "position": {
+            "x": 1069.082569641819,
+            "y": 240.08938982113546
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 104,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "comment": "",
+                "alias": "count",
+                "debug": false,
+                "type": "String",
+                "value": "SELECT COUNT(*) FROM mytable"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1029.082569641819,
+            "y": 200.08938982113546
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "67d1e4cb-1192-45af-adc4-50d9ac48b5b1",
+          "position": {
+            "x": 1444.966303260626,
+            "y": 266.9897040545982
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 164,
+          "height": 72,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Function",
+            "events": null,
+            "description": "### Description\nThe FUNCTION component is used to apply Python code to the input component's. The input can be retrieved using the variable *data*.\n\nTo be able to use data from components of type FUNCTION that are not linked together, the object is set repository.\n\n```python\nrepository.set('value', 5) - this sets the variable value to 5.\nrepository.get('value') - in this way the variable is called value and the value 5 is returned.\n```\n\n### Input\nThe input is used by the component using the variable **data**.\n\n### Output\nThe output coincides with the return of the code defined when the component was created.",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "propagate",
+                  "type": "boolean",
+                  "label": "Flush at the end"
+                },
+                {
+                  "name": "notify_warnings",
+                  "type": "boolean",
+                  "label": "Notify warnings"
+                },
+                {
+                  "name": "code",
+                  "type": "code",
+                  "description": "A python function that processes the incoming message. \nVariables available are:\n- **data**: the incoming message\n",
+                  "label": "Code",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": null,
+                  "value": null
+                }
+              ],
+              "click": null,
+              "icon": "RiCodeSSlashFill",
+              "values": {
+                "comment": "",
+                "alias": "read batches",
+                "debug": true,
+                "propagate": true,
+                "notify_warnings": true,
+                "code": "tot = data['COUNT(*)']\nbatch_size = 3\nn_batches = tot/batch_size\nn_batches = int(n_batches) if tot%batch_size==0 else int(n_batches+1)\nfor i in range(n_batches):\n  offset = i*batch_size\n  yield f'SELECT * FROM mytable LIMIT {batch_size} OFFSET {offset}'\n"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1404.966303260626,
+            "y": 226.98970405459818
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "24d560a7-ce18-4c0a-8a9f-9fd433fb0a02",
+          "position": {
+            "x": 1868.6380960078516,
+            "y": 251.3915894553743
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Grouper",
+            "events": null,
+            "description": "### Description\nThe GROUPER component is used to group the elements received in input. The items will be returned in batches with a maximum size equal to **Group size**.\n\n### Input\nIn this case there is no fixed input format.\n\n### Output\nIn output lists of elements received in input with a maximum length equal to **Group size**.",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "n",
+                  "label": "Group size",
+                  "type": "number"
+                }
+              ],
+              "click": null,
+              "icon": "RiGroupFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "n": "100"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1828.6380960078516,
+            "y": 211.3915894553743
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "72450081-3d60-4440-84e3-7e21188bd174",
+          "position": {
+            "x": 821,
+            "y": 366
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 172,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "MySQL/MariaDB",
+            "events": null,
+            "description": "",
+            "inputs": [
+              {
+                "id": "insert",
+                "label": "insert",
+                "service": "save",
+                "to": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query",
+                "service": "query",
+                "to": "query"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "insert",
+                "label": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "db",
+                  "type": "select",
+                  "label": "DB",
+                  "helper": "Specify the DB type",
+                  "group": "",
+                  "value": "MySQL",
+                  "description": "",
+                  "validation": null,
+                  "options": [
+                    "MySQL",
+                    "MariaDB"
+                  ]
+                },
+                {
+                  "name": "host",
+                  "type": "text",
+                  "label": "Host",
+                  "helper": "",
+                  "group": "",
+                  "value": "sql-tools_mysql",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "port",
+                  "type": "number",
+                  "label": "Port",
+                  "helper": "",
+                  "group": "",
+                  "value": 3306,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "user",
+                  "type": "text",
+                  "label": "user",
+                  "helper": "",
+                  "group": "",
+                  "value": "root",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "password",
+                  "type": "password",
+                  "label": "Password",
+                  "helper": "",
+                  "group": "",
+                  "value": "root_password",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "db_name",
+                  "type": "text",
+                  "label": "DB name",
+                  "helper": "Specify the DB name",
+                  "group": "",
+                  "value": "mydb",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "table_name",
+                  "type": "text",
+                  "label": "Table name",
+                  "helper": "Specify the table name",
+                  "group": "",
+                  "value": "mytable",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiDatabase2Line",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "db": "MariaDB",
+                "host": "sql-tools_mariadb",
+                "port": "3306",
+                "user": "root",
+                "password": "root_password",
+                "db_name": "mydb",
+                "table_name": "mytable"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 821,
+            "y": 366
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "aa7a944b-e179-47a7-b133-eec286fe0e5f",
+          "position": {
+            "x": 1244,
+            "y": 249
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 172,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "MySQL/MariaDB",
+            "events": null,
+            "description": "",
+            "inputs": [
+              {
+                "id": "insert",
+                "label": "insert",
+                "service": "save",
+                "to": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query",
+                "service": "query",
+                "to": "query"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "insert",
+                "label": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "db",
+                  "type": "select",
+                  "label": "DB",
+                  "helper": "Specify the DB type",
+                  "group": "",
+                  "value": "MySQL",
+                  "description": "",
+                  "validation": null,
+                  "options": [
+                    "MySQL",
+                    "MariaDB"
+                  ]
+                },
+                {
+                  "name": "host",
+                  "type": "text",
+                  "label": "Host",
+                  "helper": "",
+                  "group": "",
+                  "value": "sql-tools_mysql",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "port",
+                  "type": "number",
+                  "label": "Port",
+                  "helper": "",
+                  "group": "",
+                  "value": 3306,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "user",
+                  "type": "text",
+                  "label": "user",
+                  "helper": "",
+                  "group": "",
+                  "value": "root",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "password",
+                  "type": "password",
+                  "label": "Password",
+                  "helper": "",
+                  "group": "",
+                  "value": "root_password",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "db_name",
+                  "type": "text",
+                  "label": "DB name",
+                  "helper": "Specify the DB name",
+                  "group": "",
+                  "value": "mydb",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "table_name",
+                  "type": "text",
+                  "label": "Table name",
+                  "helper": "Specify the table name",
+                  "group": "",
+                  "value": "mytable",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiDatabase2Line",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": false,
+                "db": "MariaDB",
+                "host": "sql-tools_mariadb",
+                "port": "3306",
+                "user": "root",
+                "password": "root_password",
+                "db_name": "mydb",
+                "table_name": "mytable"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1244,
+            "y": 249
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "ca025c32-44ba-4b30-bcdc-5af34431d5c8",
+          "position": {
+            "x": 1652,
+            "y": 277
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 172,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "MySQL/MariaDB",
+            "events": null,
+            "description": "",
+            "inputs": [
+              {
+                "id": "insert",
+                "label": "insert",
+                "service": "save",
+                "to": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query",
+                "service": "query",
+                "to": "query"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "insert",
+                "label": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "db",
+                  "type": "select",
+                  "label": "DB",
+                  "helper": "Specify the DB type",
+                  "group": "",
+                  "value": "MySQL",
+                  "description": "",
+                  "validation": null,
+                  "options": [
+                    "MySQL",
+                    "MariaDB"
+                  ]
+                },
+                {
+                  "name": "host",
+                  "type": "text",
+                  "label": "Host",
+                  "helper": "",
+                  "group": "",
+                  "value": "sql-tools_mysql",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "port",
+                  "type": "number",
+                  "label": "Port",
+                  "helper": "",
+                  "group": "",
+                  "value": 3306,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "user",
+                  "type": "text",
+                  "label": "user",
+                  "helper": "",
+                  "group": "",
+                  "value": "root",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "password",
+                  "type": "password",
+                  "label": "Password",
+                  "helper": "",
+                  "group": "",
+                  "value": "root_password",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "db_name",
+                  "type": "text",
+                  "label": "DB name",
+                  "helper": "Specify the DB name",
+                  "group": "",
+                  "value": "mydb",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "table_name",
+                  "type": "text",
+                  "label": "Table name",
+                  "helper": "Specify the table name",
+                  "group": "",
+                  "value": "mytable",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiDatabase2Line",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": false,
+                "db": "MariaDB",
+                "host": "sql-tools_mariadb",
+                "port": "3306",
+                "user": "root",
+                "password": "root_password",
+                "db_name": "mydb",
+                "table_name": "mytable"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1652,
+            "y": 277
+          },
+          "__class__": "Node"
+        }
+      ],
+      "edges": [
+        {
+          "id": "reactflow__edge-e66b1f39-dd7c-4d3a-b3bf-19b1195610c6output-72450081-3d60-4440-84e3-7e21188bd174query",
+          "source": "e66b1f39-dd7c-4d3a-b3bf-19b1195610c6",
+          "sourceHandle": "output",
+          "target": "72450081-3d60-4440-84e3-7e21188bd174",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-7886246e-f8fa-42c1-a6a6-90bf3539f3eboutput-72450081-3d60-4440-84e3-7e21188bd174insert",
+          "source": "7886246e-f8fa-42c1-a6a6-90bf3539f3eb",
+          "sourceHandle": "output",
+          "target": "72450081-3d60-4440-84e3-7e21188bd174",
+          "targetHandle": "insert",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-33011bf9-099c-4f42-8fc4-560b8781b641output-72450081-3d60-4440-84e3-7e21188bd174query",
+          "source": "33011bf9-099c-4f42-8fc4-560b8781b641",
+          "sourceHandle": "output",
+          "target": "72450081-3d60-4440-84e3-7e21188bd174",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-3d819693-3fc9-4918-a1cc-b1fa81000de5output-72450081-3d60-4440-84e3-7e21188bd174query",
+          "source": "3d819693-3fc9-4918-a1cc-b1fa81000de5",
+          "sourceHandle": "output",
+          "target": "72450081-3d60-4440-84e3-7e21188bd174",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-ee0d5d75-3e3a-4f0b-b263-b6a05d3340e6output-72450081-3d60-4440-84e3-7e21188bd174query",
+          "source": "ee0d5d75-3e3a-4f0b-b263-b6a05d3340e6",
+          "sourceHandle": "output",
+          "target": "72450081-3d60-4440-84e3-7e21188bd174",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-a466f060-0b97-4fea-82fc-645e1025b1b4output-aa7a944b-e179-47a7-b133-eec286fe0e5fquery",
+          "source": "a466f060-0b97-4fea-82fc-645e1025b1b4",
+          "sourceHandle": "output",
+          "target": "aa7a944b-e179-47a7-b133-eec286fe0e5f",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-aa7a944b-e179-47a7-b133-eec286fe0e5fquery-67d1e4cb-1192-45af-adc4-50d9ac48b5b1input",
+          "source": "aa7a944b-e179-47a7-b133-eec286fe0e5f",
+          "sourceHandle": "query",
+          "target": "67d1e4cb-1192-45af-adc4-50d9ac48b5b1",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#888",
+            "stopColor": "#D770AD"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-67d1e4cb-1192-45af-adc4-50d9ac48b5b1output-ca025c32-44ba-4b30-bcdc-5af34431d5c8query",
+          "source": "67d1e4cb-1192-45af-adc4-50d9ac48b5b1",
+          "sourceHandle": "output",
+          "target": "ca025c32-44ba-4b30-bcdc-5af34431d5c8",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-ca025c32-44ba-4b30-bcdc-5af34431d5c8query-24d560a7-ce18-4c0a-8a9f-9fd433fb0a02input",
+          "source": "ca025c32-44ba-4b30-bcdc-5af34431d5c8",
+          "sourceHandle": "query",
+          "target": "24d560a7-ce18-4c0a-8a9f-9fd433fb0a02",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#888",
+            "stopColor": "#D770AD"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        }
+      ],
+      "__class__": "Graph"
+    }
+  },
+  "open": [
+    "main"
+  ],
+  "active": "main",
+  "version": "1.0.0",
+  "__class__": "Project"
+}
