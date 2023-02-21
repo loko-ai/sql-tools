@@ -1,3 +1,4 @@
+from doc.doc import mysql_mariadb_doc, postgres_doc, sqlite_doc
 from loko_extensions.model.components import Component, save_extensions, Input, Arg, AsyncSelect, Dynamic, Select, \
     Output
 
@@ -13,7 +14,7 @@ port_mysql = Arg(name="port",
                  value=3306)
 
 user = Arg(name="user",
-           label="user",
+           label="User",
            type="text",
            value="root")
 
@@ -44,7 +45,8 @@ db = Select(name='db',
 inputs = [Input(id="insert", service="save", to="insert"), Input(id="query", service="query", to="query")]
 outputs = [Output(id="insert"), Output(id="query")]
 mysql_mariadb = Component(name="MySQL/MariaDB", inputs=inputs, outputs=outputs, icon="RiDatabase2Line",
-                  args=[db, host_mysql, port_mysql, user, password, db_name, table_name])
+                          args=[db, host_mysql, port_mysql, user, password, db_name, table_name],
+                          description=mysql_mariadb_doc)
 
 host_postgres = Arg(name="host",
                     label="Host",
@@ -59,11 +61,13 @@ port_postgres = Arg(name="port",
 inputs = [Input(id="insert", service="save", to="insert"), Input(id="query", service="query", to="query")]
 outputs = [Output(id="insert"), Output(id="query")]
 postgres = Component(name="Postgres", inputs=inputs, outputs=outputs, icon="RiDatabase2Line",
-                     args=[host_postgres, port_postgres, user, password, db_name, table_name])
+                     args=[host_postgres, port_postgres, user, password, db_name, table_name],
+                     description=postgres_doc)
 
 
 sqlite = Component(name="SQLite", inputs=inputs, outputs=outputs, icon="RiDatabase2Line",
-                     args=[db_name, table_name])
+                   args=[db_name, table_name],
+                   description=sqlite_doc)
 
 
 save_extensions([mysql_mariadb, postgres, sqlite])

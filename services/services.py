@@ -54,23 +54,43 @@ def _get_dao(f):
     return tmp
 
 
+@app.on_request
+async def start_service(request):
+    dashes = str("-" * 10)
+    logger.info(f'{dashes}  Start:  {request.method} {request.path} {dashes}')
+
+
+@app.on_response
+async def end_service(request, response):
+    dashes = str("-" * 10)
+    if response.status == 200:
+        logger.info(f'{dashes}  End (ok):  {request.method} {request.path} {dashes}')
+    else:
+        logger.info(
+            f'{dashes}  End (error): {response.status} - {response.body} - {request.method} {request.path} {dashes}')
+
 @bp.post("/save")
 @doc.summary('It saves elements into a table given its name')
 @doc.description('''
 **Example:**
 
-    {"value": [{"a": "123", "b": 3}], "args": {"name": "MySQL", "db_name": "mydb", "table_name": "mytable"}}
+    {"value": [{"article": 1, "dealer": "A", "price": "3.45"}], 
+     "args": {"name": "MySQL/MariaDB", "db": "MySQL", "host": "0.0.0.0", "port": 3306, 
+              "user": "root", "password": "root_password", "db_name": "mydb", 
+              "table_name": "mytable"}}
     ''')
 @doc.consumes(doc.JsonBody({"value": dict, "args": dict}), location="body")
 @extract_value_args()
 @_get_dao
-async def save(dao, element, args):
+async def save(dao, elements, args):
     table = args.get('table_name')
     logger.debug(f'TABLE: {table}')
     if re.search('[^a-zA-Z0-9_]', table):
         return sanic.response.json('only alphanumeric and "_" characters are allowed in a table name', 400)
-    dao.save(table, element)
-    return sanic.json(f"{len(element)} elements saved")
+    elements = elements if isinstance(elements, list) else [elements]
+    dao.save(table, elements)
+    logger.debug(f"{len(elements)} elements saved")
+    return sanic.json(f"{len(elements)} elements saved")
 
 
 
@@ -79,7 +99,10 @@ async def save(dao, element, args):
 @doc.description('''
 **Example:**
 
-    {"value": {"query": "SELECT * FROM mytable"}, "args": {"name": "MySQL", "db_name": "mydb", "table_name": "mytable"}}
+    {"value": "SELECT * FROM mytable LIMIT 10 OFFSET 5",      
+     "args": {"name": "MySQL/MariaDB", "db": "MySQL", "host": "0.0.0.0", "port": 3306, 
+              "user": "root", "password": "root_password", "db_name": "mydb", 
+              "table_name": "mytable"}}
     ''')
 @doc.consumes(doc.JsonBody({"value": dict, "args": dict}), location="body")
 @extract_value_args()
@@ -92,6 +115,7 @@ async def query(dao, q, args):
 
 @app.exception(Exception)
 async def manage_exception(request, exception):
+    logger.debug(exception)
     logger.exception('ERROR')
     if isinstance(exception, NotFound):
         return sanic.json(str(exception), status=404)

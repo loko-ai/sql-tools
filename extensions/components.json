@@ -1,7 +1,7 @@
 [
  {
   "name": "MySQL/MariaDB",
-  "description": "",
+  "description": "### Description\n**MySQL/MariaDB** component is used to persist the data processed through the developed flows.\n\nIt allows to query and insert the data in the chosen database directly within the workflows.\n\n### Configuration\n- **DB** allows to select the DB type: MySQL or MariaDB.\n\n- **Host** is used to set the host name. If you're using the extension's side container use \"sql-tools_mysql\" or \n\"sql-tools_mariadb\".\n\n- **Port** is used to set the default port.\n\n- **User** is used to set the user account.\n\n- **Password** is the password associated to the user account.\n\n- **DB name** is used to set the SQL DB.\n\n- **Table name** is used to insert new data into a table. \n\n### Input\nThe component has two inputs:\n- **Insert** accepts single dictionaries (representing rows of the table) or list of dictionaries. \n  Passing single rows as input can be time consuming. \n- **Query** requires a string containing the SQL query.\n\n### Output\n- **Save** returns a string with the number of elements saved.\n- **Query** returns a dictionary for each element of the requested query. If the query produces no results, \n  \"Query executed\" will be returned.\n",
   "group": "Custom",
   "icon": "RiDatabase2Line",
   "click": null,
@@ -79,7 +79,7 @@
     {
      "name": "user",
      "type": "text",
-     "label": "user",
+     "label": "User",
      "helper": "",
      "group": "",
      "value": "root",
@@ -121,7 +121,7 @@
  },
  {
   "name": "Postgres",
-  "description": "",
+  "description": "### Description\n**Postgres** component is used to persist the data processed through the developed flows.\n\nIt allows to query and insert the data in the chosen database directly within the workflows.\n\n### Configuration\n\n- **Host** is used to set the host name. If you're using the extension's side container use \"sql-tools_postgres\".\n\n- **Port** is used to set the default port.\n\n- **User** is used to set the user account.\n\n- **Password** is the password associated to the user account.\n\n- **DB name** is used to set the SQL DB.\n\n- **Table name** is used to insert new data into a table. \n\n### Input\nThe component has two inputs:\n- **Insert** accepts single dictionaries (representing rows of the table) or list of dictionaries. \n  Passing single rows as input can be time consuming. \n- **Query** requires a string containing the SQL query.\n\n### Output\n- **Save** returns a string with the number of elements saved.\n- **Query** returns a dictionary for each element of the requested query. If the query produces no results, \n  \"Query executed\" will be returned.\n",
   "group": "Custom",
   "icon": "RiDatabase2Line",
   "click": null,
@@ -184,7 +184,7 @@
     {
      "name": "user",
      "type": "text",
-     "label": "user",
+     "label": "User",
      "helper": "",
      "group": "",
      "value": "root",
@@ -226,7 +226,7 @@
  },
  {
   "name": "SQLite",
-  "description": "",
+  "description": "### Description\n**SQLite** component is used to persist the data processed through the developed flows.\n\nIt allows to query and insert the data in the chosen database directly within the workflows.\n\n### Configuration\n\n- **DB name** is used to set the SQL DB.\n\n- **Table name** is used to insert new data into a table. \n\n### Input\nThe component has two inputs:\n- **Insert** accepts single dictionaries (representing rows of the table) or list of dictionaries. \n  Passing single rows as input can be time consuming. \n- **Query** requires a string containing the SQL query.\n\n### Output\n- **Save** returns a string with the number of elements saved.\n- **Query** returns a dictionary for each element of the requested query. If the query produces no results, \n  \"Query executed\" will be returned.\n",
   "group": "Custom",
   "icon": "RiDatabase2Line",
   "click": null,

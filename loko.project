@@ -3,7 +3,7 @@
   "id": "sql-tools",
   "description": "",
   "created_on": "15/02/2023, 08:36:18",
-  "last_modify": "20/02/2023, 10:17:57",
+  "last_modify": "21/02/2023, 10:02:16",
   "graphs": {
     "mysql": {
       "nodes": [
@@ -592,8 +592,8 @@
         {
           "id": "034296a2-9cd1-4258-a78e-3720dd6bcaf3",
           "position": {
-            "x": 1364.966303260626,
-            "y": 186.98970405459818
+            "x": 1361.966303260626,
+            "y": 159.98970405459818
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -673,7 +673,7 @@
                 "debug": true,
                 "propagate": true,
                 "notify_warnings": true,
-                "code": "tot = data['COUNT(*)']\nbatch_size = 3\nn_batches = tot/batch_size\nn_batches = n_batches if tot%batch_size==0 else int(n_batches+1)\nfor i in range(n_batches):\n  offset = i*batch_size\n  yield f'SELECT * FROM mytable LIMIT {batch_size} OFFSET {offset}'\n\n"
+                "code": "tot = data['COUNT(*)']\nbatch_size = 3\nn_batches = tot/batch_size\nn_batches = int(n_batches) if tot%batch_size==0 else int(n_batches+1)\nfor i in range(n_batches):\n  offset = i*batch_size\n  yield f'SELECT * FROM mytable LIMIT {batch_size} OFFSET {offset}'\n\n"
               }
             },
             "locked": null
@@ -681,8 +681,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1364.966303260626,
-            "y": 186.98970405459818
+            "x": 1361.966303260626,
+            "y": 159.98970405459818
           },
           "__class__": "Node"
         },
@@ -764,23 +764,23 @@
           "__class__": "Node"
         },
         {
-          "id": "0be89958-4d4c-47f7-b85d-b3f2926a63fc",
+          "id": "e34039f1-9fa8-4af7-9e9d-da63c49d434a",
           "position": {
-            "x": 719,
-            "y": 282
+            "x": 710,
+            "y": 261
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 150,
+          "width": 172,
           "height": 56,
           "selected": false,
           "dragging": false,
           "data": {
             "name": "MySQL/MariaDB",
             "events": null,
-            "description": "",
+            "description": "### Description\n**MySQL/MariaDB** component is used to persist the data processed through the developed flows.\n\nIt allows to query and insert the data in the chosen database directly within the workflows.\n\n### Configuration\n- **DB** allows to select the DB type: MySQL or MariaDB.\n\n- **Host** is used to set the host name. If you're using the extension's side container use \"sql-tools_mysql\" or \n\"sql-tools_mariadb\".\n\n- **Port** is used to set the default port.\n\n- **User** is used to set the user account.\n\n- **Password** is the password associated to the user account.\n\n- **DB name** is used to set the SQL DB.\n\n- **Table name** is used to insert new data into a table. \n\n### Input\nThe component has two inputs:\n- **Insert** accepts single dictionaries (representing rows of the table) or list of dictionaries. \n  Passing single rows as input can be time consuming. \n- **Query** requires a string containing the SQL query.\n\n### Output\n- **Save** returns a string with the number of elements saved.\n- **Query** returns a dictionary for each element of the requested query. If the query produces no results, \n  \"Query executed\" will be returned.\n",
             "inputs": [
               {
                 "id": "insert",
@@ -864,7 +864,7 @@
                 {
                   "name": "user",
                   "type": "text",
-                  "label": "user",
+                  "label": "User",
                   "helper": "",
                   "group": "",
                   "value": "root",
@@ -920,16 +920,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 719,
-            "y": 282
+            "x": 710,
+            "y": 261
           },
           "__class__": "Node"
         },
         {
-          "id": "6a2a83e4-e9de-4c3c-9a40-647844450475",
+          "id": "55b86b36-e81b-45a5-9ac8-7e4e09846787",
           "position": {
             "x": 1163,
-            "y": 159
+            "y": 122
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -942,7 +942,7 @@
           "data": {
             "name": "MySQL/MariaDB",
             "events": null,
-            "description": "",
+            "description": "### Description\n**MySQL/MariaDB** component is used to persist the data processed through the developed flows.\n\nIt allows to query and insert the data in the chosen database directly within the workflows.\n\n### Configuration\n- **DB** allows to select the DB type: MySQL or MariaDB.\n\n- **Host** is used to set the host name. If you're using the extension's side container use \"sql-tools_mysql\" or \n\"sql-tools_mariadb\".\n\n- **Port** is used to set the default port.\n\n- **User** is used to set the user account.\n\n- **Password** is the password associated to the user account.\n\n- **DB name** is used to set the SQL DB.\n\n- **Table name** is used to insert new data into a table. \n\n### Input\nThe component has two inputs:\n- **Insert** accepts single dictionaries (representing rows of the table) or list of dictionaries. \n  Passing single rows as input can be time consuming. \n- **Query** requires a string containing the SQL query.\n\n### Output\n- **Save** returns a string with the number of elements saved.\n- **Query** returns a dictionary for each element of the requested query. If the query produces no results, \n  \"Query executed\" will be returned.\n",
             "inputs": [
               {
                 "id": "insert",
@@ -1026,7 +1026,7 @@
                 {
                   "name": "user",
                   "type": "text",
-                  "label": "user",
+                  "label": "User",
                   "helper": "",
                   "group": "",
                   "value": "root",
@@ -1081,15 +1081,15 @@
           "draggable": true,
           "positionAbsolute": {
             "x": 1163,
-            "y": 159
+            "y": 122
           },
           "__class__": "Node"
         },
         {
-          "id": "65251cb0-2081-48d8-b584-dcb8c96f614d",
+          "id": "b3df8352-0f15-4621-adc1-417138ccbd87",
           "position": {
-            "x": 1575,
-            "y": 208
+            "x": 1568,
+            "y": 187
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1102,7 +1102,7 @@
           "data": {
             "name": "MySQL/MariaDB",
             "events": null,
-            "description": "",
+            "description": "### Description\n**MySQL/MariaDB** component is used to persist the data processed through the developed flows.\n\nIt allows to query and insert the data in the chosen database directly within the workflows.\n\n### Configuration\n- **DB** allows to select the DB type: MySQL or MariaDB.\n\n- **Host** is used to set the host name. If you're using the extension's side container use \"sql-tools_mysql\" or \n\"sql-tools_mariadb\".\n\n- **Port** is used to set the default port.\n\n- **User** is used to set the user account.\n\n- **Password** is the password associated to the user account.\n\n- **DB name** is used to set the SQL DB.\n\n- **Table name** is used to insert new data into a table. \n\n### Input\nThe component has two inputs:\n- **Insert** accepts single dictionaries (representing rows of the table) or list of dictionaries. \n  Passing single rows as input can be time consuming. \n- **Query** requires a string containing the SQL query.\n\n### Output\n- **Save** returns a string with the number of elements saved.\n- **Query** returns a dictionary for each element of the requested query. If the query produces no results, \n  \"Query executed\" will be returned.\n",
             "inputs": [
               {
                 "id": "insert",
@@ -1186,7 +1186,7 @@
                 {
                   "name": "user",
                   "type": "text",
-                  "label": "user",
+                  "label": "User",
                   "helper": "",
                   "group": "",
                   "value": "root",
@@ -1235,23 +1235,24 @@
                 "db_name": "mydb",
                 "table_name": "mytable"
               }
-            }
+            },
+            "locked": null
           },
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1575,
-            "y": 208
+            "x": 1568,
+            "y": 187
           },
           "__class__": "Node"
         }
       ],
       "edges": [
         {
-          "id": "reactflow__edge-4b4bde6e-6ef9-4c75-ade4-d15cfa5e6a11output-0be89958-4d4c-47f7-b85d-b3f2926a63fcquery",
+          "id": "reactflow__edge-4b4bde6e-6ef9-4c75-ade4-d15cfa5e6a11output-e34039f1-9fa8-4af7-9e9d-da63c49d434aquery",
           "source": "4b4bde6e-6ef9-4c75-ade4-d15cfa5e6a11",
           "sourceHandle": "output",
-          "target": "0be89958-4d4c-47f7-b85d-b3f2926a63fc",
+          "target": "e34039f1-9fa8-4af7-9e9d-da63c49d434a",
           "targetHandle": "query",
           "data": {
             "startColor": "#D770AD",
@@ -1262,10 +1263,10 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-f58ce1c6-7479-4064-8940-73e8c1ff4cdboutput-0be89958-4d4c-47f7-b85d-b3f2926a63fcinsert",
+          "id": "reactflow__edge-f58ce1c6-7479-4064-8940-73e8c1ff4cdboutput-e34039f1-9fa8-4af7-9e9d-da63c49d434ainsert",
           "source": "f58ce1c6-7479-4064-8940-73e8c1ff4cdb",
           "sourceHandle": "output",
-          "target": "0be89958-4d4c-47f7-b85d-b3f2926a63fc",
+          "target": "e34039f1-9fa8-4af7-9e9d-da63c49d434a",
           "targetHandle": "insert",
           "data": {
             "startColor": "#D770AD",
@@ -1276,10 +1277,10 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-ae4a2a05-5406-49f0-9824-0dc960512820output-0be89958-4d4c-47f7-b85d-b3f2926a63fcquery",
+          "id": "reactflow__edge-ae4a2a05-5406-49f0-9824-0dc960512820output-e34039f1-9fa8-4af7-9e9d-da63c49d434aquery",
           "source": "ae4a2a05-5406-49f0-9824-0dc960512820",
           "sourceHandle": "output",
-          "target": "0be89958-4d4c-47f7-b85d-b3f2926a63fc",
+          "target": "e34039f1-9fa8-4af7-9e9d-da63c49d434a",
           "targetHandle": "query",
           "data": {
             "startColor": "#D770AD",
@@ -1290,10 +1291,10 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-da8d63cc-4495-4f9f-83a2-300aa7e3d891output-0be89958-4d4c-47f7-b85d-b3f2926a63fcquery",
+          "id": "reactflow__edge-da8d63cc-4495-4f9f-83a2-300aa7e3d891output-e34039f1-9fa8-4af7-9e9d-da63c49d434aquery",
           "source": "da8d63cc-4495-4f9f-83a2-300aa7e3d891",
           "sourceHandle": "output",
-          "target": "0be89958-4d4c-47f7-b85d-b3f2926a63fc",
+          "target": "e34039f1-9fa8-4af7-9e9d-da63c49d434a",
           "targetHandle": "query",
           "data": {
             "startColor": "#D770AD",
@@ -1304,10 +1305,10 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-2a803702-17d8-4041-875a-8177a926b4dboutput-0be89958-4d4c-47f7-b85d-b3f2926a63fcquery",
+          "id": "reactflow__edge-2a803702-17d8-4041-875a-8177a926b4dboutput-e34039f1-9fa8-4af7-9e9d-da63c49d434aquery",
           "source": "2a803702-17d8-4041-875a-8177a926b4db",
           "sourceHandle": "output",
-          "target": "0be89958-4d4c-47f7-b85d-b3f2926a63fc",
+          "target": "e34039f1-9fa8-4af7-9e9d-da63c49d434a",
           "targetHandle": "query",
           "data": {
             "startColor": "#D770AD",
@@ -1318,10 +1319,10 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-fa793226-798f-46da-b04a-a609705e8ed3output-6a2a83e4-e9de-4c3c-9a40-647844450475query",
+          "id": "reactflow__edge-fa793226-798f-46da-b04a-a609705e8ed3output-55b86b36-e81b-45a5-9ac8-7e4e09846787query",
           "source": "fa793226-798f-46da-b04a-a609705e8ed3",
           "sourceHandle": "output",
-          "target": "6a2a83e4-e9de-4c3c-9a40-647844450475",
+          "target": "55b86b36-e81b-45a5-9ac8-7e4e09846787",
           "targetHandle": "query",
           "data": {
             "startColor": "#D770AD",
@@ -1332,8 +1333,8 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-6a2a83e4-e9de-4c3c-9a40-647844450475query-034296a2-9cd1-4258-a78e-3720dd6bcaf3input",
-          "source": "6a2a83e4-e9de-4c3c-9a40-647844450475",
+          "id": "reactflow__edge-55b86b36-e81b-45a5-9ac8-7e4e09846787query-034296a2-9cd1-4258-a78e-3720dd6bcaf3input",
+          "source": "55b86b36-e81b-45a5-9ac8-7e4e09846787",
           "sourceHandle": "query",
           "target": "034296a2-9cd1-4258-a78e-3720dd6bcaf3",
           "targetHandle": "input",
@@ -1346,10 +1347,10 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-034296a2-9cd1-4258-a78e-3720dd6bcaf3output-65251cb0-2081-48d8-b584-dcb8c96f614dquery",
+          "id": "reactflow__edge-034296a2-9cd1-4258-a78e-3720dd6bcaf3output-b3df8352-0f15-4621-adc1-417138ccbd87query",
           "source": "034296a2-9cd1-4258-a78e-3720dd6bcaf3",
           "sourceHandle": "output",
-          "target": "65251cb0-2081-48d8-b584-dcb8c96f614d",
+          "target": "b3df8352-0f15-4621-adc1-417138ccbd87",
           "targetHandle": "query",
           "data": {
             "startColor": "#D770AD",
@@ -1360,8 +1361,8 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-65251cb0-2081-48d8-b584-dcb8c96f614dquery-7431a3ec-c5df-47bc-bcf5-99df5385b445input",
-          "source": "65251cb0-2081-48d8-b584-dcb8c96f614d",
+          "id": "reactflow__edge-b3df8352-0f15-4621-adc1-417138ccbd87query-7431a3ec-c5df-47bc-bcf5-99df5385b445input",
+          "source": "b3df8352-0f15-4621-adc1-417138ccbd87",
           "sourceHandle": "query",
           "target": "7431a3ec-c5df-47bc-bcf5-99df5385b445",
           "targetHandle": "input",
@@ -2044,7 +2045,7 @@
                 "debug": true,
                 "propagate": true,
                 "notify_warnings": true,
-                "code": "tot = data['count']\nbatch_size = 3\nn_batches = tot/batch_size\nn_batches = n_batches if tot%batch_size==0 else int(n_batches+1)\nfor i in range(n_batches):\n  offset = i*batch_size\n  yield f'SELECT * FROM mytable LIMIT {batch_size} OFFSET {offset}'\n\n"
+                "code": "tot = data['count']\nbatch_size = 3\nn_batches = tot/batch_size\nn_batches = int(n_batches) if tot%batch_size==0 else int(n_batches+1)\nfor i in range(n_batches):\n  offset = i*batch_size\n  yield f'SELECT * FROM mytable LIMIT {batch_size} OFFSET {offset}'\n\n"
               }
             },
             "locked": null
@@ -2135,10 +2136,10 @@
           "__class__": "Node"
         },
         {
-          "id": "ae66b926-b4c5-406a-a20d-145f25a6618f",
+          "id": "27cf6bbe-dc2f-4df7-80d3-e6a319a71fcb",
           "position": {
-            "x": 1242,
-            "y": 191
+            "x": 723,
+            "y": 330
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -2151,305 +2152,7 @@
           "data": {
             "name": "Postgres",
             "events": null,
-            "description": "",
-            "inputs": [
-              {
-                "id": "insert",
-                "label": "insert",
-                "service": "save",
-                "to": "insert"
-              },
-              {
-                "id": "query",
-                "label": "query",
-                "service": "query",
-                "to": "query"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "insert",
-                "label": "insert"
-              },
-              {
-                "id": "query",
-                "label": "query"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Custom",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "host",
-                  "type": "text",
-                  "label": "Host",
-                  "helper": "",
-                  "group": "",
-                  "value": "sql_ext_postgres",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "port",
-                  "type": "number",
-                  "label": "Port",
-                  "helper": "",
-                  "group": "",
-                  "value": 5432,
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "user",
-                  "type": "text",
-                  "label": "user",
-                  "helper": "",
-                  "group": "",
-                  "value": "root",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "password",
-                  "type": "password",
-                  "label": "Password",
-                  "helper": "",
-                  "group": "",
-                  "value": "root_password",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "db_name",
-                  "type": "text",
-                  "label": "DB name",
-                  "helper": "Specify the DB name",
-                  "group": "",
-                  "value": "mydb",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "table_name",
-                  "type": "text",
-                  "label": "Table name",
-                  "helper": "Specify the table name",
-                  "group": "",
-                  "value": "mytable",
-                  "description": "",
-                  "validation": null
-                }
-              ],
-              "click": null,
-              "icon": "RiDatabase2Line",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": true,
-                "host": "sql-tools_postgres",
-                "port": "5432",
-                "user": "root",
-                "password": "root_password",
-                "db_name": "mydb",
-                "table_name": "mytable"
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 1242,
-            "y": 191
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "b042dd7e-cf21-4bb1-888c-56511c1165fc",
-          "position": {
-            "x": 1633,
-            "y": 186
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 56,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Postgres",
-            "events": null,
-            "description": "",
-            "inputs": [
-              {
-                "id": "insert",
-                "label": "insert",
-                "service": "save",
-                "to": "insert"
-              },
-              {
-                "id": "query",
-                "label": "query",
-                "service": "query",
-                "to": "query"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "insert",
-                "label": "insert"
-              },
-              {
-                "id": "query",
-                "label": "query"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Custom",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "host",
-                  "type": "text",
-                  "label": "Host",
-                  "helper": "",
-                  "group": "",
-                  "value": "sql_ext_postgres",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "port",
-                  "type": "number",
-                  "label": "Port",
-                  "helper": "",
-                  "group": "",
-                  "value": 5432,
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "user",
-                  "type": "text",
-                  "label": "user",
-                  "helper": "",
-                  "group": "",
-                  "value": "root",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "password",
-                  "type": "password",
-                  "label": "Password",
-                  "helper": "",
-                  "group": "",
-                  "value": "root_password",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "db_name",
-                  "type": "text",
-                  "label": "DB name",
-                  "helper": "Specify the DB name",
-                  "group": "",
-                  "value": "mydb",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "table_name",
-                  "type": "text",
-                  "label": "Table name",
-                  "helper": "Specify the table name",
-                  "group": "",
-                  "value": "mytable",
-                  "description": "",
-                  "validation": null
-                }
-              ],
-              "click": null,
-              "icon": "RiDatabase2Line",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": false,
-                "host": "sql-tools_postgres",
-                "port": "5432",
-                "user": "root",
-                "password": "root_password",
-                "db_name": "mydb",
-                "table_name": "mytable"
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 1633,
-            "y": 186
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41",
-          "position": {
-            "x": 737,
-            "y": 323
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 56,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Postgres",
-            "events": null,
-            "description": "",
+            "description": "### Description\n**Postgres** component is used to persist the data processed through the developed flows.\n\nIt allows to query and insert the data in the chosen database directly within the workflows.\n\n### Configuration\n\n- **Host** is used to set the host name. If you're using the extension's side container use \"sql-tools_postgres\".\n\n- **Port** is used to set the default port.\n\n- **User** is used to set the user account.\n\n- **Password** is the password associated to the user account.\n\n- **DB name** is used to set the SQL DB.\n\n- **Table name** is used to insert new data into a table. \n\n### Input\nThe component has two inputs:\n- **Insert** accepts single dictionaries (representing rows of the table) or list of dictionaries. \n  Passing single rows as input can be time consuming. \n- **Query** requires a string containing the SQL query.\n\n### Output\n- **Save** returns a string with the number of elements saved.\n- **Query** returns a dictionary for each element of the requested query. If the query produces no results, \n  \"Query executed\" will be returned.\n",
             "inputs": [
               {
                 "id": "insert",
@@ -2519,7 +2222,7 @@
                 {
                   "name": "user",
                   "type": "text",
-                  "label": "user",
+                  "label": "User",
                   "helper": "",
                   "group": "",
                   "value": "root",
@@ -2568,23 +2271,312 @@
                 "table_name": "mytable",
                 "debug": true
               }
-            }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "__class__": "Node"
+        },
+        {
+          "id": "b66115ba-cbd7-464f-867c-09a4cc503f36",
+          "position": {
+            "x": 1245,
+            "y": 177
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Postgres",
+            "events": null,
+            "description": "### Description\n**Postgres** component is used to persist the data processed through the developed flows.\n\nIt allows to query and insert the data in the chosen database directly within the workflows.\n\n### Configuration\n\n- **Host** is used to set the host name. If you're using the extension's side container use \"sql-tools_postgres\".\n\n- **Port** is used to set the default port.\n\n- **User** is used to set the user account.\n\n- **Password** is the password associated to the user account.\n\n- **DB name** is used to set the SQL DB.\n\n- **Table name** is used to insert new data into a table. \n\n### Input\nThe component has two inputs:\n- **Insert** accepts single dictionaries (representing rows of the table) or list of dictionaries. \n  Passing single rows as input can be time consuming. \n- **Query** requires a string containing the SQL query.\n\n### Output\n- **Save** returns a string with the number of elements saved.\n- **Query** returns a dictionary for each element of the requested query. If the query produces no results, \n  \"Query executed\" will be returned.\n",
+            "inputs": [
+              {
+                "id": "insert",
+                "label": "insert",
+                "service": "save",
+                "to": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query",
+                "service": "query",
+                "to": "query"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "insert",
+                "label": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "host",
+                  "type": "text",
+                  "label": "Host",
+                  "helper": "",
+                  "group": "",
+                  "value": "sql-tools_postgres",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "port",
+                  "type": "number",
+                  "label": "Port",
+                  "helper": "",
+                  "group": "",
+                  "value": 5432,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "user",
+                  "type": "text",
+                  "label": "User",
+                  "helper": "",
+                  "group": "",
+                  "value": "root",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "password",
+                  "type": "password",
+                  "label": "Password",
+                  "helper": "",
+                  "group": "",
+                  "value": "root_password",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "db_name",
+                  "type": "text",
+                  "label": "DB name",
+                  "helper": "Specify the DB name",
+                  "group": "",
+                  "value": "mydb",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "table_name",
+                  "type": "text",
+                  "label": "Table name",
+                  "helper": "Specify the table name",
+                  "group": "",
+                  "value": "mytable",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiDatabase2Line",
+              "values": {
+                "host": "sql-tools_postgres",
+                "port": 5432,
+                "user": "root",
+                "password": "root_password",
+                "db_name": "mydb",
+                "table_name": "mytable"
+              }
+            },
+            "locked": null
           },
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 737,
-            "y": 323
+            "x": 1245,
+            "y": 177
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "db05e483-424c-4320-85c0-aa7308a006d7",
+          "position": {
+            "x": 1638,
+            "y": 176
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Postgres",
+            "events": null,
+            "description": "### Description\n**Postgres** component is used to persist the data processed through the developed flows.\n\nIt allows to query and insert the data in the chosen database directly within the workflows.\n\n### Configuration\n\n- **Host** is used to set the host name. If you're using the extension's side container use \"sql-tools_postgres\".\n\n- **Port** is used to set the default port.\n\n- **User** is used to set the user account.\n\n- **Password** is the password associated to the user account.\n\n- **DB name** is used to set the SQL DB.\n\n- **Table name** is used to insert new data into a table. \n\n### Input\nThe component has two inputs:\n- **Insert** accepts single dictionaries (representing rows of the table) or list of dictionaries. \n  Passing single rows as input can be time consuming. \n- **Query** requires a string containing the SQL query.\n\n### Output\n- **Save** returns a string with the number of elements saved.\n- **Query** returns a dictionary for each element of the requested query. If the query produces no results, \n  \"Query executed\" will be returned.\n",
+            "inputs": [
+              {
+                "id": "insert",
+                "label": "insert",
+                "service": "save",
+                "to": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query",
+                "service": "query",
+                "to": "query"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "insert",
+                "label": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "host",
+                  "type": "text",
+                  "label": "Host",
+                  "helper": "",
+                  "group": "",
+                  "value": "sql-tools_postgres",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "port",
+                  "type": "number",
+                  "label": "Port",
+                  "helper": "",
+                  "group": "",
+                  "value": 5432,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "user",
+                  "type": "text",
+                  "label": "User",
+                  "helper": "",
+                  "group": "",
+                  "value": "root",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "password",
+                  "type": "password",
+                  "label": "Password",
+                  "helper": "",
+                  "group": "",
+                  "value": "root_password",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "db_name",
+                  "type": "text",
+                  "label": "DB name",
+                  "helper": "Specify the DB name",
+                  "group": "",
+                  "value": "mydb",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "table_name",
+                  "type": "text",
+                  "label": "Table name",
+                  "helper": "Specify the table name",
+                  "group": "",
+                  "value": "mytable",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiDatabase2Line",
+              "values": {
+                "host": "sql-tools_postgres",
+                "port": 5432,
+                "user": "root",
+                "password": "root_password",
+                "db_name": "mydb",
+                "table_name": "mytable"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1638,
+            "y": 176
           },
           "__class__": "Node"
         }
       ],
       "edges": [
         {
-          "id": "reactflow__edge-b95835c4-e196-413c-b4e2-e4aca88529dfoutput-ae66b926-b4c5-406a-a20d-145f25a6618fquery",
-          "source": "b95835c4-e196-413c-b4e2-e4aca88529df",
+          "id": "reactflow__edge-242cfb08-bdc2-4b6a-bb84-fb983b213f63output-27cf6bbe-dc2f-4df7-80d3-e6a319a71fcbquery",
+          "source": "242cfb08-bdc2-4b6a-bb84-fb983b213f63",
           "sourceHandle": "output",
-          "target": "ae66b926-b4c5-406a-a20d-145f25a6618f",
+          "target": "27cf6bbe-dc2f-4df7-80d3-e6a319a71fcb",
           "targetHandle": "query",
           "data": {
             "startColor": "#D770AD",
@@ -2595,8 +2587,78 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-ae66b926-b4c5-406a-a20d-145f25a6618fquery-61fae21e-5646-44f3-8699-516a28b8a16cinput",
-          "source": "ae66b926-b4c5-406a-a20d-145f25a6618f",
+          "id": "reactflow__edge-02b4f758-3a12-4b5f-a427-e0df77b67f5eoutput-27cf6bbe-dc2f-4df7-80d3-e6a319a71fcbinsert",
+          "source": "02b4f758-3a12-4b5f-a427-e0df77b67f5e",
+          "sourceHandle": "output",
+          "target": "27cf6bbe-dc2f-4df7-80d3-e6a319a71fcb",
+          "targetHandle": "insert",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-5b6903ca-9d06-4d2c-a6af-808c7057d632output-27cf6bbe-dc2f-4df7-80d3-e6a319a71fcbquery",
+          "source": "5b6903ca-9d06-4d2c-a6af-808c7057d632",
+          "sourceHandle": "output",
+          "target": "27cf6bbe-dc2f-4df7-80d3-e6a319a71fcb",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-206b54e9-2f49-401d-bd9d-2cbe64199d77output-27cf6bbe-dc2f-4df7-80d3-e6a319a71fcbquery",
+          "source": "206b54e9-2f49-401d-bd9d-2cbe64199d77",
+          "sourceHandle": "output",
+          "target": "27cf6bbe-dc2f-4df7-80d3-e6a319a71fcb",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-9c15519d-cce2-4dff-a616-ab2e76b875e5output-27cf6bbe-dc2f-4df7-80d3-e6a319a71fcbquery",
+          "source": "9c15519d-cce2-4dff-a616-ab2e76b875e5",
+          "sourceHandle": "output",
+          "target": "27cf6bbe-dc2f-4df7-80d3-e6a319a71fcb",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-b95835c4-e196-413c-b4e2-e4aca88529dfoutput-b66115ba-cbd7-464f-867c-09a4cc503f36query",
+          "source": "b95835c4-e196-413c-b4e2-e4aca88529df",
+          "sourceHandle": "output",
+          "target": "b66115ba-cbd7-464f-867c-09a4cc503f36",
+          "targetHandle": "query",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-b66115ba-cbd7-464f-867c-09a4cc503f36query-61fae21e-5646-44f3-8699-516a28b8a16cinput",
+          "source": "b66115ba-cbd7-464f-867c-09a4cc503f36",
           "sourceHandle": "query",
           "target": "61fae21e-5646-44f3-8699-516a28b8a16c",
           "targetHandle": "input",
@@ -2609,10 +2671,10 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-61fae21e-5646-44f3-8699-516a28b8a16coutput-b042dd7e-cf21-4bb1-888c-56511c1165fcquery",
+          "id": "reactflow__edge-61fae21e-5646-44f3-8699-516a28b8a16coutput-db05e483-424c-4320-85c0-aa7308a006d7query",
           "source": "61fae21e-5646-44f3-8699-516a28b8a16c",
           "sourceHandle": "output",
-          "target": "b042dd7e-cf21-4bb1-888c-56511c1165fc",
+          "target": "db05e483-424c-4320-85c0-aa7308a006d7",
           "targetHandle": "query",
           "data": {
             "startColor": "#D770AD",
@@ -2623,84 +2685,14 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-b042dd7e-cf21-4bb1-888c-56511c1165fcquery-2d11b198-51e1-4041-8847-9052abd83322input",
-          "source": "b042dd7e-cf21-4bb1-888c-56511c1165fc",
+          "id": "reactflow__edge-db05e483-424c-4320-85c0-aa7308a006d7query-2d11b198-51e1-4041-8847-9052abd83322input",
+          "source": "db05e483-424c-4320-85c0-aa7308a006d7",
           "sourceHandle": "query",
           "target": "2d11b198-51e1-4041-8847-9052abd83322",
           "targetHandle": "input",
           "data": {
             "startColor": "#888",
             "stopColor": "#D770AD"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
-          "id": "reactflow__edge-242cfb08-bdc2-4b6a-bb84-fb983b213f63output-b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41query",
-          "source": "242cfb08-bdc2-4b6a-bb84-fb983b213f63",
-          "sourceHandle": "output",
-          "target": "b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41",
-          "targetHandle": "query",
-          "data": {
-            "startColor": "#D770AD",
-            "stopColor": "#888"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
-          "id": "reactflow__edge-02b4f758-3a12-4b5f-a427-e0df77b67f5eoutput-b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41insert",
-          "source": "02b4f758-3a12-4b5f-a427-e0df77b67f5e",
-          "sourceHandle": "output",
-          "target": "b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41",
-          "targetHandle": "insert",
-          "data": {
-            "startColor": "#D770AD",
-            "stopColor": "#888"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
-          "id": "reactflow__edge-5b6903ca-9d06-4d2c-a6af-808c7057d632output-b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41query",
-          "source": "5b6903ca-9d06-4d2c-a6af-808c7057d632",
-          "sourceHandle": "output",
-          "target": "b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41",
-          "targetHandle": "query",
-          "data": {
-            "startColor": "#D770AD",
-            "stopColor": "#888"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
-          "id": "reactflow__edge-206b54e9-2f49-401d-bd9d-2cbe64199d77output-b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41query",
-          "source": "206b54e9-2f49-401d-bd9d-2cbe64199d77",
-          "sourceHandle": "output",
-          "target": "b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41",
-          "targetHandle": "query",
-          "data": {
-            "startColor": "#D770AD",
-            "stopColor": "#888"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
-          "id": "reactflow__edge-9c15519d-cce2-4dff-a616-ab2e76b875e5output-b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41query",
-          "source": "9c15519d-cce2-4dff-a616-ab2e76b875e5",
-          "sourceHandle": "output",
-          "target": "b1fc4af3-24bb-4d8b-b8c1-721aeaf22f41",
-          "targetHandle": "query",
-          "data": {
-            "startColor": "#D770AD",
-            "stopColor": "#888"
           },
           "selected": false,
           "dragging": false,
@@ -3468,10 +3460,10 @@
           "__class__": "Node"
         },
         {
-          "id": "357b64f5-0fb8-4b36-a15c-a01af55d156f",
+          "id": "d7c42150-9520-4651-a83e-56cbc5e34ea5",
           "position": {
-            "x": 745,
-            "y": 285
+            "x": 764,
+            "y": 278
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -3484,7 +3476,7 @@
           "data": {
             "name": "SQLite",
             "events": null,
-            "description": "",
+            "description": "### Description\n**SQLite** component is used to persist the data processed through the developed flows.\n\nIt allows to query and insert the data in the chosen database directly within the workflows.\n\n### Configuration\n\n- **DB name** is used to set the SQL DB.\n\n- **Table name** is used to insert new data into a table. \n\n### Input\nThe component has two inputs:\n- **Insert** accepts single dictionaries (representing rows of the table) or list of dictionaries. \n  Passing single rows as input can be time consuming. \n- **Query** requires a string containing the SQL query.\n\n### Output\n- **Save** returns a string with the number of elements saved.\n- **Query** returns a dictionary for each element of the requested query. If the query produces no results, \n  \"Query executed\" will be returned.\n",
             "inputs": [
               {
                 "id": "insert",
@@ -3559,21 +3551,22 @@
                 "table_name": "mytable",
                 "debug": true
               }
-            }
+            },
+            "locked": null
           },
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 745,
-            "y": 285
+            "x": 764,
+            "y": 278
           },
           "__class__": "Node"
         },
         {
-          "id": "5f887c05-ad31-47d4-a671-29ff6a9f5259",
+          "id": "3473216c-17ce-4d4c-848c-485e075ff1a8",
           "position": {
-            "x": 1216,
-            "y": 190
+            "x": 1224,
+            "y": 251
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -3586,7 +3579,7 @@
           "data": {
             "name": "SQLite",
             "events": null,
-            "description": "",
+            "description": "### Description\n**SQLite** component is used to persist the data processed through the developed flows.\n\nIt allows to query and insert the data in the chosen database directly within the workflows.\n\n### Configuration\n\n- **DB name** is used to set the SQL DB.\n\n- **Table name** is used to insert new data into a table. \n\n### Input\nThe component has two inputs:\n- **Insert** accepts single dictionaries (representing rows of the table) or list of dictionaries. \n  Passing single rows as input can be time consuming. \n- **Query** requires a string containing the SQL query.\n\n### Output\n- **Save** returns a string with the number of elements saved.\n- **Query** returns a dictionary for each element of the requested query. If the query produces no results, \n  \"Query executed\" will be returned.\n",
             "inputs": [
               {
                 "id": "insert",
@@ -3599,109 +3592,6 @@
                 "label": "query",
                 "service": "query",
                 "to": "query"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "insert",
-                "label": "insert"
-              },
-              {
-                "id": "query",
-                "label": "query"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Custom",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "db_name",
-                  "type": "text",
-                  "label": "DB name",
-                  "helper": "Specify the DB name",
-                  "group": "",
-                  "value": "mydb",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "table_name",
-                  "type": "text",
-                  "label": "Table name",
-                  "helper": "Specify the table name",
-                  "group": "",
-                  "value": "mytable",
-                  "description": "",
-                  "validation": null
-                }
-              ],
-              "click": null,
-              "icon": "RiDatabase2Line",
-              "values": {
-                "db_name": "mydb",
-                "table_name": "mytable",
-                "debug": true
-              }
-            }
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 1216,
-            "y": 190
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "61b6484d-dd5f-412e-b4a3-537739e5194c",
-          "position": {
-            "x": 1624,
-            "y": 252
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 56,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "SQLite",
-            "events": null,
-            "description": "",
-            "inputs": [
-              {
-                "id": "insert",
-                "label": "insert",
-                "service": "save",
-                "to": "insert"
-              },
-              {
-                "id": "query",
-                "label": "query",
-                "service": "query",
-                "to": "query",
-                "closed": false
               }
             ],
             "outputs": [
@@ -3763,23 +3653,126 @@
                 "db_name": "mydb",
                 "table_name": "mytable"
               }
-            }
+            },
+            "locked": null
           },
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1624,
-            "y": 252
+            "x": 1224,
+            "y": 251
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "970f6dfb-d827-4061-b8b0-1c70bc08dd8a",
+          "position": {
+            "x": 1638,
+            "y": 245
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "SQLite",
+            "events": null,
+            "description": "### Description\n**SQLite** component is used to persist the data processed through the developed flows.\n\nIt allows to query and insert the data in the chosen database directly within the workflows.\n\n### Configuration\n\n- **DB name** is used to set the SQL DB.\n\n- **Table name** is used to insert new data into a table. \n\n### Input\nThe component has two inputs:\n- **Insert** accepts single dictionaries (representing rows of the table) or list of dictionaries. \n  Passing single rows as input can be time consuming. \n- **Query** requires a string containing the SQL query.\n\n### Output\n- **Save** returns a string with the number of elements saved.\n- **Query** returns a dictionary for each element of the requested query. If the query produces no results, \n  \"Query executed\" will be returned.\n",
+            "inputs": [
+              {
+                "id": "insert",
+                "label": "insert",
+                "service": "save",
+                "to": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query",
+                "service": "query",
+                "to": "query"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "insert",
+                "label": "insert"
+              },
+              {
+                "id": "query",
+                "label": "query"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "db_name",
+                  "type": "text",
+                  "label": "DB name",
+                  "helper": "Specify the DB name",
+                  "group": "",
+                  "value": "mydb",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "table_name",
+                  "type": "text",
+                  "label": "Table name",
+                  "helper": "Specify the table name",
+                  "group": "",
+                  "value": "mytable",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiDatabase2Line",
+              "values": {
+                "db_name": "mydb",
+                "table_name": "mytable"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1638,
+            "y": 245
           },
           "__class__": "Node"
         }
       ],
       "edges": [
         {
-          "id": "reactflow__edge-f19b7cce-9ace-41d1-84eb-673ff5653117output-357b64f5-0fb8-4b36-a15c-a01af55d156fquery",
+          "id": "reactflow__edge-f19b7cce-9ace-41d1-84eb-673ff5653117output-d7c42150-9520-4651-a83e-56cbc5e34ea5query",
           "source": "f19b7cce-9ace-41d1-84eb-673ff5653117",
           "sourceHandle": "output",
-          "target": "357b64f5-0fb8-4b36-a15c-a01af55d156f",
+          "target": "d7c42150-9520-4651-a83e-56cbc5e34ea5",
           "targetHandle": "query",
           "data": {
             "startColor": "#D770AD",
@@ -3790,10 +3783,10 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-b6293a66-49f2-4403-9f40-de1090b3abceoutput-357b64f5-0fb8-4b36-a15c-a01af55d156finsert",
+          "id": "reactflow__edge-b6293a66-49f2-4403-9f40-de1090b3abceoutput-d7c42150-9520-4651-a83e-56cbc5e34ea5insert",
           "source": "b6293a66-49f2-4403-9f40-de1090b3abce",
           "sourceHandle": "output",
-          "target": "357b64f5-0fb8-4b36-a15c-a01af55d156f",
+          "target": "d7c42150-9520-4651-a83e-56cbc5e34ea5",
           "targetHandle": "insert",
           "data": {
             "startColor": "#D770AD",
@@ -3804,10 +3797,10 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-102774c4-8cb7-4b03-922b-1ef0ab43b8c3output-357b64f5-0fb8-4b36-a15c-a01af55d156fquery",
+          "id": "reactflow__edge-102774c4-8cb7-4b03-922b-1ef0ab43b8c3output-d7c42150-9520-4651-a83e-56cbc5e34ea5query",
           "source": "102774c4-8cb7-4b03-922b-1ef0ab43b8c3",
           "sourceHandle": "output",
-          "target": "357b64f5-0fb8-4b36-a15c-a01af55d156f",
+          "target": "d7c42150-9520-4651-a83e-56cbc5e34ea5",
           "targetHandle": "query",
           "data": {
             "startColor": "#D770AD",
@@ -3818,10 +3811,10 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-6657fc83-14e3-4fa7-9b18-d30786ea2a4boutput-357b64f5-0fb8-4b36-a15c-a01af55d156fquery",
+          "id": "reactflow__edge-6657fc83-14e3-4fa7-9b18-d30786ea2a4boutput-d7c42150-9520-4651-a83e-56cbc5e34ea5query",
           "source": "6657fc83-14e3-4fa7-9b18-d30786ea2a4b",
           "sourceHandle": "output",
-          "target": "357b64f5-0fb8-4b36-a15c-a01af55d156f",
+          "target": "d7c42150-9520-4651-a83e-56cbc5e34ea5",
           "targetHandle": "query",
           "data": {
             "startColor": "#D770AD",
@@ -3832,24 +3825,10 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-4aa64734-9867-49e2-872f-6214dd2479c6output-357b64f5-0fb8-4b36-a15c-a01af55d156fquery",
-          "source": "4aa64734-9867-49e2-872f-6214dd2479c6",
-          "sourceHandle": "output",
-          "target": "357b64f5-0fb8-4b36-a15c-a01af55d156f",
-          "targetHandle": "query",
-          "data": {
-            "startColor": "#D770AD",
-            "stopColor": "#888"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
-          "id": "reactflow__edge-36d7a8e4-5b47-472f-be38-fd8682aa9740output-5f887c05-ad31-47d4-a671-29ff6a9f5259query",
+          "id": "reactflow__edge-36d7a8e4-5b47-472f-be38-fd8682aa9740output-3473216c-17ce-4d4c-848c-485e075ff1a8query",
           "source": "36d7a8e4-5b47-472f-be38-fd8682aa9740",
           "sourceHandle": "output",
-          "target": "5f887c05-ad31-47d4-a671-29ff6a9f5259",
+          "target": "3473216c-17ce-4d4c-848c-485e075ff1a8",
           "targetHandle": "query",
           "data": {
             "startColor": "#D770AD",
@@ -3860,8 +3839,8 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-5f887c05-ad31-47d4-a671-29ff6a9f5259query-402d2e64-856d-433f-bc51-432312689554input",
-          "source": "5f887c05-ad31-47d4-a671-29ff6a9f5259",
+          "id": "reactflow__edge-3473216c-17ce-4d4c-848c-485e075ff1a8query-402d2e64-856d-433f-bc51-432312689554input",
+          "source": "3473216c-17ce-4d4c-848c-485e075ff1a8",
           "sourceHandle": "query",
           "target": "402d2e64-856d-433f-bc51-432312689554",
           "targetHandle": "input",
@@ -3874,10 +3853,10 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-402d2e64-856d-433f-bc51-432312689554output-61b6484d-dd5f-412e-b4a3-537739e5194cquery",
+          "id": "reactflow__edge-402d2e64-856d-433f-bc51-432312689554output-970f6dfb-d827-4061-b8b0-1c70bc08dd8aquery",
           "source": "402d2e64-856d-433f-bc51-432312689554",
           "sourceHandle": "output",
-          "target": "61b6484d-dd5f-412e-b4a3-537739e5194c",
+          "target": "970f6dfb-d827-4061-b8b0-1c70bc08dd8a",
           "targetHandle": "query",
           "data": {
             "startColor": "#D770AD",
@@ -3888,8 +3867,8 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-61b6484d-dd5f-412e-b4a3-537739e5194cquery-daeaae1b-acc2-4ee8-b1e8-c1fe99226e81input",
-          "source": "61b6484d-dd5f-412e-b4a3-537739e5194c",
+          "id": "reactflow__edge-970f6dfb-d827-4061-b8b0-1c70bc08dd8aquery-daeaae1b-acc2-4ee8-b1e8-c1fe99226e81input",
+          "source": "970f6dfb-d827-4061-b8b0-1c70bc08dd8a",
           "sourceHandle": "query",
           "target": "daeaae1b-acc2-4ee8-b1e8-c1fe99226e81",
           "targetHandle": "input",
@@ -4663,23 +4642,23 @@
           "__class__": "Node"
         },
         {
-          "id": "72450081-3d60-4440-84e3-7e21188bd174",
+          "id": "3a0b790b-cdfb-4d04-9c12-cbb6bd836dba",
           "position": {
-            "x": 821,
-            "y": 366
+            "x": 802,
+            "y": 334
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 172,
+          "width": 150,
           "height": 56,
           "selected": false,
           "dragging": false,
           "data": {
             "name": "MySQL/MariaDB",
             "events": null,
-            "description": "",
+            "description": "### Description\n**MySQL/MariaDB** component is used to persist the data processed through the developed flows.\n\nIt allows to query and insert the data in the chosen database directly within the workflows.\n\n### Configuration\n- **DB** allows to select the DB type: MySQL or MariaDB.\n\n- **Host** is used to set the host name. If you're using the extension's side container use \"sql-tools_mysql\" or \n\"sql-tools_mariadb\".\n\n- **Port** is used to set the default port.\n\n- **User** is used to set the user account.\n\n- **Password** is the password associated to the user account.\n\n- **DB name** is used to set the SQL DB.\n\n- **Table name** is used to insert new data into a table. \n\n### Input\nThe component has two inputs:\n- **Insert** accepts single dictionaries (representing rows of the table) or list of dictionaries. \n  Passing single rows as input can be time consuming. \n- **Query** requires a string containing the SQL query.\n\n### Output\n- **Save** returns a string with the number of elements saved.\n- **Query** returns a dictionary for each element of the requested query. If the query produces no results, \n  \"Query executed\" will be returned.\n",
             "inputs": [
               {
                 "id": "insert",
@@ -4763,7 +4742,7 @@
                 {
                   "name": "user",
                   "type": "text",
-                  "label": "user",
+                  "label": "User",
                   "helper": "",
                   "group": "",
                   "value": "root",
@@ -4821,16 +4800,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 821,
-            "y": 366
+            "x": 802,
+            "y": 334
           },
           "__class__": "Node"
         },
         {
-          "id": "aa7a944b-e179-47a7-b133-eec286fe0e5f",
+          "id": "5f035ba9-95b9-463a-8391-1a73567b46ee",
           "position": {
-            "x": 1244,
-            "y": 249
+            "x": 1248,
+            "y": 250
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -4843,7 +4822,7 @@
           "data": {
             "name": "MySQL/MariaDB",
             "events": null,
-            "description": "",
+            "description": "### Description\n**MySQL/MariaDB** component is used to persist the data processed through the developed flows.\n\nIt allows to query and insert the data in the chosen database directly within the workflows.\n\n### Configuration\n- **DB** allows to select the DB type: MySQL or MariaDB.\n\n- **Host** is used to set the host name. If you're using the extension's side container use \"sql-tools_mysql\" or \n\"sql-tools_mariadb\".\n\n- **Port** is used to set the default port.\n\n- **User** is used to set the user account.\n\n- **Password** is the password associated to the user account.\n\n- **DB name** is used to set the SQL DB.\n\n- **Table name** is used to insert new data into a table. \n\n### Input\nThe component has two inputs:\n- **Insert** accepts single dictionaries (representing rows of the table) or list of dictionaries. \n  Passing single rows as input can be time consuming. \n- **Query** requires a string containing the SQL query.\n\n### Output\n- **Save** returns a string with the number of elements saved.\n- **Query** returns a dictionary for each element of the requested query. If the query produces no results, \n  \"Query executed\" will be returned.\n",
             "inputs": [
               {
                 "id": "insert",
@@ -4927,7 +4906,7 @@
                 {
                   "name": "user",
                   "type": "text",
-                  "label": "user",
+                  "label": "User",
                   "helper": "",
                   "group": "",
                   "value": "root",
@@ -4985,16 +4964,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1244,
-            "y": 249
+            "x": 1248,
+            "y": 250
           },
           "__class__": "Node"
         },
         {
-          "id": "ca025c32-44ba-4b30-bcdc-5af34431d5c8",
+          "id": "f5fb14a9-99ad-4e63-9efc-6ab5f617bc79",
           "position": {
-            "x": 1652,
-            "y": 277
+            "x": 1655,
+            "y": 283
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -5007,7 +4986,7 @@
           "data": {
             "name": "MySQL/MariaDB",
             "events": null,
-            "description": "",
+            "description": "### Description\n**MySQL/MariaDB** component is used to persist the data processed through the developed flows.\n\nIt allows to query and insert the data in the chosen database directly within the workflows.\n\n### Configuration\n- **DB** allows to select the DB type: MySQL or MariaDB.\n\n- **Host** is used to set the host name. If you're using the extension's side container use \"sql-tools_mysql\" or \n\"sql-tools_mariadb\".\n\n- **Port** is used to set the default port.\n\n- **User** is used to set the user account.\n\n- **Password** is the password associated to the user account.\n\n- **DB name** is used to set the SQL DB.\n\n- **Table name** is used to insert new data into a table. \n\n### Input\nThe component has two inputs:\n- **Insert** accepts single dictionaries (representing rows of the table) or list of dictionaries. \n  Passing single rows as input can be time consuming. \n- **Query** requires a string containing the SQL query.\n\n### Output\n- **Save** returns a string with the number of elements saved.\n- **Query** returns a dictionary for each element of the requested query. If the query produces no results, \n  \"Query executed\" will be returned.\n",
             "inputs": [
               {
                 "id": "insert",
@@ -5091,7 +5070,7 @@
                 {
                   "name": "user",
                   "type": "text",
-                  "label": "user",
+                  "label": "User",
                   "helper": "",
                   "group": "",
                   "value": "root",
@@ -5149,18 +5128,18 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1652,
-            "y": 277
+            "x": 1655,
+            "y": 283
           },
           "__class__": "Node"
         }
       ],
       "edges": [
         {
-          "id": "reactflow__edge-e66b1f39-dd7c-4d3a-b3bf-19b1195610c6output-72450081-3d60-4440-84e3-7e21188bd174query",
+          "id": "reactflow__edge-e66b1f39-dd7c-4d3a-b3bf-19b1195610c6output-3a0b790b-cdfb-4d04-9c12-cbb6bd836dbaquery",
           "source": "e66b1f39-dd7c-4d3a-b3bf-19b1195610c6",
           "sourceHandle": "output",
-          "target": "72450081-3d60-4440-84e3-7e21188bd174",
+          "target": "3a0b790b-cdfb-4d04-9c12-cbb6bd836dba",
           "targetHandle": "query",
           "data": {
             "startColor": "#D770AD",
@@ -5171,10 +5150,10 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-7886246e-f8fa-42c1-a6a6-90bf3539f3eboutput-72450081-3d60-4440-84e3-7e21188bd174insert",
+          "id": "reactflow__edge-7886246e-f8fa-42c1-a6a6-90bf3539f3eboutput-3a0b790b-cdfb-4d04-9c12-cbb6bd836dbainsert",
           "source": "7886246e-f8fa-42c1-a6a6-90bf3539f3eb",
           "sourceHandle": "output",
-          "target": "72450081-3d60-4440-84e3-7e21188bd174",
+          "target": "3a0b790b-cdfb-4d04-9c12-cbb6bd836dba",
           "targetHandle": "insert",
           "data": {
             "startColor": "#D770AD",
@@ -5185,10 +5164,10 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-33011bf9-099c-4f42-8fc4-560b8781b641output-72450081-3d60-4440-84e3-7e21188bd174query",
+          "id": "reactflow__edge-33011bf9-099c-4f42-8fc4-560b8781b641output-3a0b790b-cdfb-4d04-9c12-cbb6bd836dbaquery",
           "source": "33011bf9-099c-4f42-8fc4-560b8781b641",
           "sourceHandle": "output",
-          "target": "72450081-3d60-4440-84e3-7e21188bd174",
+          "target": "3a0b790b-cdfb-4d04-9c12-cbb6bd836dba",
           "targetHandle": "query",
           "data": {
             "startColor": "#D770AD",
@@ -5199,10 +5178,10 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-3d819693-3fc9-4918-a1cc-b1fa81000de5output-72450081-3d60-4440-84e3-7e21188bd174query",
+          "id": "reactflow__edge-3d819693-3fc9-4918-a1cc-b1fa81000de5output-3a0b790b-cdfb-4d04-9c12-cbb6bd836dbaquery",
           "source": "3d819693-3fc9-4918-a1cc-b1fa81000de5",
           "sourceHandle": "output",
-          "target": "72450081-3d60-4440-84e3-7e21188bd174",
+          "target": "3a0b790b-cdfb-4d04-9c12-cbb6bd836dba",
           "targetHandle": "query",
           "data": {
             "startColor": "#D770AD",
@@ -5213,24 +5192,10 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-ee0d5d75-3e3a-4f0b-b263-b6a05d3340e6output-72450081-3d60-4440-84e3-7e21188bd174query",
-          "source": "ee0d5d75-3e3a-4f0b-b263-b6a05d3340e6",
-          "sourceHandle": "output",
-          "target": "72450081-3d60-4440-84e3-7e21188bd174",
-          "targetHandle": "query",
-          "data": {
-            "startColor": "#D770AD",
-            "stopColor": "#888"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
-          "id": "reactflow__edge-a466f060-0b97-4fea-82fc-645e1025b1b4output-aa7a944b-e179-47a7-b133-eec286fe0e5fquery",
+          "id": "reactflow__edge-a466f060-0b97-4fea-82fc-645e1025b1b4output-5f035ba9-95b9-463a-8391-1a73567b46eequery",
           "source": "a466f060-0b97-4fea-82fc-645e1025b1b4",
           "sourceHandle": "output",
-          "target": "aa7a944b-e179-47a7-b133-eec286fe0e5f",
+          "target": "5f035ba9-95b9-463a-8391-1a73567b46ee",
           "targetHandle": "query",
           "data": {
             "startColor": "#D770AD",
@@ -5241,8 +5206,8 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-aa7a944b-e179-47a7-b133-eec286fe0e5fquery-67d1e4cb-1192-45af-adc4-50d9ac48b5b1input",
-          "source": "aa7a944b-e179-47a7-b133-eec286fe0e5f",
+          "id": "reactflow__edge-5f035ba9-95b9-463a-8391-1a73567b46eequery-67d1e4cb-1192-45af-adc4-50d9ac48b5b1input",
+          "source": "5f035ba9-95b9-463a-8391-1a73567b46ee",
           "sourceHandle": "query",
           "target": "67d1e4cb-1192-45af-adc4-50d9ac48b5b1",
           "targetHandle": "input",
@@ -5255,10 +5220,10 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-67d1e4cb-1192-45af-adc4-50d9ac48b5b1output-ca025c32-44ba-4b30-bcdc-5af34431d5c8query",
+          "id": "reactflow__edge-67d1e4cb-1192-45af-adc4-50d9ac48b5b1output-f5fb14a9-99ad-4e63-9efc-6ab5f617bc79query",
           "source": "67d1e4cb-1192-45af-adc4-50d9ac48b5b1",
           "sourceHandle": "output",
-          "target": "ca025c32-44ba-4b30-bcdc-5af34431d5c8",
+          "target": "f5fb14a9-99ad-4e63-9efc-6ab5f617bc79",
           "targetHandle": "query",
           "data": {
             "startColor": "#D770AD",
@@ -5269,8 +5234,8 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-ca025c32-44ba-4b30-bcdc-5af34431d5c8query-24d560a7-ce18-4c0a-8a9f-9fd433fb0a02input",
-          "source": "ca025c32-44ba-4b30-bcdc-5af34431d5c8",
+          "id": "reactflow__edge-f5fb14a9-99ad-4e63-9efc-6ab5f617bc79query-24d560a7-ce18-4c0a-8a9f-9fd433fb0a02input",
+          "source": "f5fb14a9-99ad-4e63-9efc-6ab5f617bc79",
           "sourceHandle": "query",
           "target": "24d560a7-ce18-4c0a-8a9f-9fd433fb0a02",
           "targetHandle": "input",
